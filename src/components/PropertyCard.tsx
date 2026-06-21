@@ -14,7 +14,7 @@ export default function PropertyCard({ property, variant = 'default' }: Property
   return (
     <Link
       to={`/property/${property.slug}`}
-      className={`group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 ${
+      className={`group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 card-hover ${
         isFeatured ? 'lg:flex lg:flex-row' : ''
       }`}
     >

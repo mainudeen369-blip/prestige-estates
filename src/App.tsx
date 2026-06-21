@@ -15,6 +15,9 @@ import AdminPropertiesPage from './admin/AdminPropertiesPage'
 import AdminPropertyFormPage from './admin/AdminPropertyFormPage'
 import AdminSettingsPage from './admin/AdminSettingsPage'
 import AdminInquiriesPage from './admin/AdminInquiriesPage'
+import AdminBuyersPage from './admin/AdminBuyersPage'
+import AdminSellersPage from './admin/AdminSellersPage'
+import AdminDealsPage from './admin/AdminDealsPage'
 
 export default function App() {
   return (
@@ -34,6 +37,9 @@ export default function App() {
           <Route element={<AdminGuard />}>
             <Route path="admin" element={<AdminLayout />}>
               <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="buyers" element={<AdminBuyersPage />} />
+              <Route path="sellers" element={<AdminSellersPage />} />
+              <Route path="deals" element={<AdminDealsPage />} />
               <Route path="properties" element={<AdminPropertiesPage />} />
               <Route path="properties/new" element={<AdminPropertyFormPage />} />
               <Route path="properties/:id/edit" element={<AdminPropertyFormPage />} />

@@ -1,12 +1,16 @@
 import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import {
   LayoutDashboard, Building2, Settings, MessageSquare, LogOut, Home, Menu, X,
+  Users, UserCheck, Handshake,
 } from 'lucide-react'
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
 
 const sidebarLinks = [
   { to: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/admin/buyers', icon: Users, label: 'Buyers' },
+  { to: '/admin/sellers', icon: UserCheck, label: 'Sellers' },
+  { to: '/admin/deals', icon: Handshake, label: 'Deals' },
   { to: '/admin/properties', icon: Building2, label: 'Properties' },
   { to: '/admin/inquiries', icon: MessageSquare, label: 'Inquiries' },
   { to: '/admin/settings', icon: Settings, label: 'Site Settings' },

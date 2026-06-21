@@ -146,7 +146,7 @@ export default function AdminSettingsPage() {
           <button
             type="button"
             onClick={() => {
-              if (confirm('Reset all data to demo defaults? This will erase custom properties and settings.')) {
+              if (confirm('Reset all data to demo defaults? This will erase custom properties, buyers, sellers, deals and settings.')) {
                 resetToSeed()
                 setForm(defaultSiteSettings)
               }
