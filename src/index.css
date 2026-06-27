@@ -247,6 +247,26 @@ body {
   background-clip: text;
 }
 
+/* Price display — avoid clipped digits on narrow mobile cards */
+.price-value {
+  display: block;
+  line-height: 1.25;
+  padding-inline: 2px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 639px) {
+  .price-value.text-shimmer,
+  .price-value.text-gradient-gold {
+    background: none;
+    -webkit-text-fill-color: #d4af37;
+    color: #d4af37;
+    animation: none;
+  }
+}
+
 /* Glass effect */
 .glass {
   background: rgba(255, 255, 255, 0.08);

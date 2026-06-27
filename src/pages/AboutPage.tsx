@@ -60,7 +60,7 @@ export default function AboutPage() {
                   { val: `${settings.happyClients}+`, label: 'Happy Families' },
                 ].map((s) => (
                   <div key={s.label} className="text-center p-4 bg-white rounded-2xl border border-slate-100 card-hover shine-hover">
-                    <p className="font-display text-2xl font-bold text-gradient-gold">{s.val}</p>
+                    <p className="font-display text-xl sm:text-2xl font-bold text-gradient-gold price-value">{s.val}</p>
                     <p className="text-xs text-slate-500 mt-1">{s.label}</p>
                   </div>
                 ))}
@@ -139,17 +139,17 @@ export default function AboutPage() {
 
         {/* Starting prices */}
         <AnimateOnScroll>
-          <div className="bg-navy-950 rounded-3xl p-10 mb-24 text-white relative overflow-hidden shine-hover">
+          <div className="bg-navy-950 rounded-3xl p-6 sm:p-10 mb-24 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/30 to-gold-900/20 animate-gradient" />
-            <div className="relative">
-              <h2 className="font-display text-3xl font-bold mb-2 text-center">Affordable Starting Prices</h2>
-              <p className="text-slate-400 text-center mb-8 text-sm">Quality properties that respect your budget</p>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative min-w-0">
+              <h2 className="font-display text-2xl sm:text-3xl font-bold mb-2 text-center">Affordable Starting Prices</h2>
+              <p className="text-slate-400 text-center mb-6 sm:mb-8 text-sm">Quality properties that respect your budget</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {settings.startingPrices.map((p) => (
-                  <div key={p.category} className="text-center p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors card-hover">
-                    <p className="text-sm text-slate-400 mb-1">{p.category}</p>
-                    <p className="text-3xl font-display font-bold text-shimmer">{p.price}</p>
-                    <p className="text-xs text-slate-500 mt-1">{p.unit}</p>
+                  <div key={p.category} className="text-center p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors min-w-0">
+                    <p className="text-xs sm:text-sm text-slate-400 mb-1 leading-snug">{p.category}</p>
+                    <p className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-shimmer price-value">{p.price}</p>
+                    <p className="text-[11px] sm:text-xs text-slate-500 mt-1 leading-snug">{p.unit}</p>
                   </div>
                 ))}
               </div>

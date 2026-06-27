@@ -108,12 +108,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 relative">
           <AnimateOnScroll>
             <p className="text-center text-gold-400 text-sm font-semibold tracking-widest uppercase mb-6">Affordable Properties — Starting From</p>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {settings.startingPrices.map((p, i) => (
-                <div key={p.category} className="text-center p-5 rounded-2xl glass card-hover shine-hover" style={{ animationDelay: `${i * 100}ms` }}>
-                  <p className="text-xs text-slate-400 mb-1">{p.category}</p>
-                  <p className="text-2xl lg:text-3xl font-display font-bold text-gradient-gold">{p.price}</p>
-                  <p className="text-xs text-slate-500 mt-1">{p.unit}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {settings.startingPrices.map((p) => (
+                <div key={p.category} className="text-center p-4 sm:p-5 rounded-2xl glass card-hover min-w-0 overflow-visible">
+                  <p className="text-xs text-slate-400 mb-1 leading-snug">{p.category}</p>
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-gradient-gold price-value">{p.price}</p>
+                  <p className="text-[11px] sm:text-xs text-slate-500 mt-1 leading-snug">{p.unit}</p>
                 </div>
               ))}
             </div>

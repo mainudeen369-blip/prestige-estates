@@ -95,12 +95,12 @@ export default function CompanyAboutSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-gold-500/10 to-emerald-500/10 animate-gradient" />
                 <div className="relative">
                   <h4 className="font-display text-lg font-semibold text-gold-400 mb-4">Affordable Starting Prices</h4>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {settings.startingPrices.map((p) => (
-                      <div key={p.category} className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                        <p className="text-xs text-slate-400">{p.category}</p>
-                        <p className="font-bold text-white text-lg">{p.price}</p>
-                        <p className="text-[10px] text-slate-500">{p.unit}</p>
+                      <div key={p.category} className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors min-w-0">
+                        <p className="text-xs text-slate-400 leading-snug">{p.category}</p>
+                        <p className="font-bold text-gold-400 text-base sm:text-lg price-value">{p.price}</p>
+                        <p className="text-[10px] sm:text-xs text-slate-500 leading-snug">{p.unit}</p>
                       </div>
                     ))}
                   </div>

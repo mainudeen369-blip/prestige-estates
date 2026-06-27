@@ -123,7 +123,7 @@ export default function PropertyDetailPage() {
             <div className="sticky top-24 space-y-6">
               <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
                 <p className="text-sm text-slate-500 mb-1">Price</p>
-                <p className="font-display text-3xl font-bold text-navy-900 mb-6">
+                <p className="font-display text-2xl sm:text-3xl font-bold text-navy-900 mb-6 price-value break-words">
                   {formatPrice(property.price, property.currency, property.priceLabel)}
                 </p>
 

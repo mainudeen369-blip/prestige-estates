@@ -39,8 +39,8 @@ export default function PropertyCard({ property, variant = 'default' }: Property
             Featured
           </span>
         )}
-        <div className="absolute bottom-4 left-4 right-4">
-          <p className="text-white font-display text-xl lg:text-2xl font-semibold drop-shadow-lg line-clamp-2">
+        <div className="absolute bottom-4 left-4 right-4 min-w-0">
+          <p className="text-white font-display text-lg sm:text-xl lg:text-2xl font-semibold drop-shadow-lg leading-tight break-words">
             {formatPrice(property.price, property.currency, property.priceLabel)}
           </p>
         </div>
