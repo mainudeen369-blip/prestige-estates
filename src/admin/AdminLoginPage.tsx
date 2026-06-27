@@ -25,7 +25,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-navy-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-brand-dark flex items-center justify-center p-4">
       <div className="absolute inset-0 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=90"

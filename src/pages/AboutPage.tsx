@@ -10,11 +10,11 @@ export default function AboutPage() {
   const whatsappLink = getWhatsAppLink(settings.whatsappNumber, `Hi ${settings.companyName}! I'd like to know more about your services.`)
 
   return (
-    <div className="bg-slate-50 min-h-screen overflow-x-clip w-full">
+    <div className="bg-page-soft min-h-screen overflow-x-clip w-full">
       {/* Hero */}
       <div className="relative min-h-[55vh] flex items-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=1920&q=90" alt="About" className="absolute inset-0 w-full h-full object-cover animate-ken-burns" />
-        <div className="absolute inset-0 bg-navy-950/80" />
+        <div className="absolute inset-0 bg-brand-overlay" />
         <FloatingParticles />
         <div className="relative max-w-4xl mx-auto px-4 text-center py-20">
           <img src="/logo.png" alt="Sri Anjaneya Realtor" className="h-32 w-auto mx-auto mb-6 rounded-2xl bg-white p-3 shadow-xl animate-bounce-subtle" />
@@ -139,7 +139,7 @@ export default function AboutPage() {
 
         {/* Starting prices */}
         <AnimateOnScroll>
-          <div className="bg-navy-950 rounded-3xl p-6 sm:p-10 mb-24 text-white relative overflow-hidden">
+          <div className="bg-brand-dark rounded-3xl p-6 sm:p-10 mb-24 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/30 to-gold-900/20 animate-gradient" />
             <div className="relative min-w-0">
               <h2 className="font-display text-2xl sm:text-3xl font-bold mb-2 text-center">Affordable Starting Prices</h2>
@@ -196,7 +196,7 @@ export default function AboutPage() {
 
         {/* Contact CTA */}
         <AnimateOnScroll>
-          <div className="bg-emerald-950 rounded-3xl p-10 text-center text-white mb-24 relative overflow-hidden">
+          <div className="bg-brand-dark rounded-3xl p-10 text-center text-white mb-24 relative overflow-hidden">
             <FloatingParticles />
             <div className="relative">
               <h2 className="font-display text-2xl lg:text-3xl font-bold mb-3">Ready to Find Your Property?</h2>

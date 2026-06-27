@@ -34,7 +34,7 @@ export default function AdminLayout() {
         <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
       )}
 
-      <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-navy-950 text-white transform transition-transform lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-brand-header text-white transform transition-transform lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-6 border-b border-white/10">
           <Logo variant="admin" linkTo="/" />
           <p className="text-[10px] text-gold-400/70 uppercase tracking-wider mt-2 pl-1">Admin Panel</p>

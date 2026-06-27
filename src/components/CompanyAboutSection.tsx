@@ -9,7 +9,7 @@ export default function CompanyAboutSection() {
   const { settings } = useApp()
 
   return (
-    <section className="py-28 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden">
+    <section className="py-28 bg-section-cream relative overflow-hidden">
       <div className="absolute top-20 right-0 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-emerald-500/5 rounded-full blur-3xl animate-float pointer-events-none" />
       <div className="absolute bottom-10 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-gold-500/8 rounded-full blur-3xl animate-float-delay pointer-events-none" />
 
@@ -91,7 +91,7 @@ export default function CompanyAboutSection() {
                 })}
               </div>
 
-              <div className="p-6 rounded-2xl bg-navy-950 text-white relative overflow-hidden shine-hover">
+              <div className="p-6 rounded-2xl bg-brand-card text-white relative overflow-hidden shine-hover">
                 <div className="absolute inset-0 bg-gradient-to-br from-gold-500/10 to-emerald-500/10 animate-gradient" />
                 <div className="relative">
                   <h4 className="font-display text-lg font-semibold text-gold-400 mb-4">Affordable Starting Prices</h4>

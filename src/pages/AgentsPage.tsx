@@ -16,8 +16,8 @@ export default function AgentsPage() {
   const closedDeals = deals.filter((d) => d.status === 'Closed').length
 
   return (
-    <div className="bg-slate-50 min-h-screen overflow-x-clip w-full">
-      <div className="bg-navy-950 py-20">
+    <div className="bg-page-soft min-h-screen overflow-x-clip w-full">
+      <div className="bg-brand-hero py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold-400 text-sm font-semibold tracking-widest uppercase mb-2">Our Team</p>
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4">Agent Profiles</h1>
@@ -92,7 +92,7 @@ export default function AgentsPage() {
         </div>
 
         <AnimateOnScroll>
-          <div className="mt-16 bg-navy-950 rounded-2xl p-8 text-center text-white">
+          <div className="mt-16 bg-brand-dark rounded-2xl p-8 text-center text-white">
             <p className="text-4xl font-display font-bold text-gold-400 mb-2">{settings.propertiesSold}+</p>
             <p className="text-slate-400">Total Properties Sold by {settings.companyName}</p>
             <p className="text-sm text-slate-500 mt-2">{closedDeals} deals tracked in our system</p>

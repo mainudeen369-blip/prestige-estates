@@ -48,8 +48,8 @@ export default function HomePage() {
       <section className="relative min-h-[92vh] flex items-center overflow-hidden w-full">
         <div className="absolute inset-0 overflow-hidden">
           <img src={settings.heroImage} alt="Property" className="w-full h-full object-cover animate-ken-burns" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/80 to-navy-950/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-brand-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/50 via-transparent to-indigo-950/30" />
         </div>
         <FloatingParticles />
         <div className="absolute top-20 right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-float hidden lg:block" />
@@ -103,7 +103,7 @@ export default function HomePage() {
       <CompanyAboutSection />
 
       {/* Starting prices banner */}
-      <section className="py-12 bg-navy-950 relative overflow-hidden">
+      <section className="py-12 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/20 via-navy-950 to-gold-900/20 animate-gradient" />
         <div className="max-w-7xl mx-auto px-4 relative">
           <AnimateOnScroll>
@@ -122,7 +122,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured */}
-      <section className="py-24 bg-slate-50 overflow-x-clip">
+      <section className="py-24 bg-section-light overflow-x-clip">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <AnimateOnScroll>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
@@ -154,7 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* Process */}
-      <section className="py-24 bg-navy-950 relative overflow-hidden">
+      <section className="py-24 bg-brand-dark relative overflow-hidden">
         <FloatingParticles />
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-emerald-500/15 rounded-full blur-3xl animate-float" />
@@ -187,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* Why choose us */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 bg-section-cream relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
@@ -216,7 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* Highlights strip */}
-      <section className="py-16 bg-emerald-950 relative overflow-hidden">
+      <section className="py-16 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-30 animate-gradient bg-gradient-to-r from-emerald-900 via-navy-900 to-emerald-900" />
         <div className="max-w-7xl mx-auto px-4 relative">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -233,7 +233,7 @@ export default function HomePage() {
       </section>
 
       {/* Recent Listings */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-section-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="text-center mb-16">
@@ -259,7 +259,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-section-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="text-center mb-16">
@@ -270,7 +270,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
               <AnimateOnScroll key={t.name} delay={i * 120} direction="up">
-                <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 card-hover relative shine-hover h-full">
+                <div className="p-8 rounded-2xl bg-section-light border border-emerald-100/80 card-hover relative shine-hover h-full">
                   <div className="text-6xl text-emerald-500/20 font-display absolute top-4 right-6">"</div>
                   <p className="text-slate-600 text-sm leading-relaxed mb-6 relative">{t.text}</p>
                   <div className="flex items-center gap-3">
@@ -290,7 +290,7 @@ export default function HomePage() {
       {/* CTA */}
       <section className="relative py-28 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=1920&q=90" alt="" className="absolute inset-0 w-full h-full object-cover animate-ken-burns" />
-        <div className="absolute inset-0 bg-navy-950/88" />
+        <div className="absolute inset-0 bg-brand-overlay" />
         <FloatingParticles />
         <AnimateOnScroll>
           <div className="relative max-w-3xl mx-auto px-4 text-center">

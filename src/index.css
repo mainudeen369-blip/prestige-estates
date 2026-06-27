@@ -10,6 +10,51 @@
   --color-gold-400: #d4af37;
   --color-gold-500: #c9a227;
   --color-gold-600: #a8861e;
+  --color-brand-emerald: #065f46;
+  --color-brand-indigo: #312e81;
+  --color-brand-teal: #0f766e;
+}
+
+/* Dual-color brand backgrounds */
+.bg-brand-header {
+  background: linear-gradient(110deg, #047857 0%, #0f2942 48%, #4338ca 100%);
+}
+
+.bg-brand-footer {
+  background: linear-gradient(165deg, #3730a3 0%, #0f2942 42%, #064e3b 100%);
+}
+
+.bg-page-soft {
+  background: linear-gradient(180deg, #ecfdf5 0%, #f8fafc 48%, #fffbeb 100%);
+  background-attachment: fixed;
+}
+
+.bg-brand-hero {
+  background: linear-gradient(125deg, #059669 0%, #0f2942 52%, #4f46e5 100%);
+}
+
+.bg-brand-dark {
+  background: linear-gradient(135deg, #064e3b 0%, #0f172a 52%, #312e81 100%);
+}
+
+.bg-brand-overlay {
+  background: linear-gradient(115deg, rgba(4, 120, 87, 0.93) 0%, rgba(15, 41, 66, 0.9) 50%, rgba(67, 56, 202, 0.78) 100%);
+}
+
+.bg-brand-card {
+  background: linear-gradient(145deg, #065f46 0%, #0f172a 65%, #1e1b4b 100%);
+}
+
+.bg-section-light {
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+.bg-section-cream {
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 55%, #ecfdf5 100%);
+}
+
+.bg-brand-marquee {
+  background: linear-gradient(90deg, #064e3b 0%, #1e1b4b 50%, #064e3b 100%);
 }
 
 * {

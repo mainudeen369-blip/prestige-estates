@@ -23,7 +23,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
 
   return (
     <>
-      <div className="relative rounded-2xl overflow-hidden bg-navy-950">
+      <div className="relative rounded-2xl overflow-hidden bg-brand-card">
         <div className="aspect-[16/9] relative">
           <img
             src={images[current]}

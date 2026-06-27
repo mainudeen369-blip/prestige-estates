@@ -19,14 +19,14 @@ export default function SellPage() {
   )
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-page-soft min-h-screen">
       <div className="relative h-[50vh] min-h-[400px]">
         <img
           src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=90"
           alt="Sell your property"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-navy-950/75" />
+        <div className="absolute inset-0 bg-brand-overlay" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4 max-w-2xl">
             <p className="text-gold-400 text-sm font-semibold tracking-widest uppercase mb-3">For Sellers</p>
