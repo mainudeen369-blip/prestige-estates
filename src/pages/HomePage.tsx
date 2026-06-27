@@ -70,6 +70,11 @@ export default function HomePage() {
             <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
               {settings.heroSubtitle}
             </p>
+            {settings.heroSubtitleTelugu && (
+              <p className="text-base sm:text-lg text-[#e8f4ef]/90 leading-relaxed max-w-2xl mt-3 animate-fade-up" style={{ animationDelay: '0.25s' }}>
+                {settings.heroSubtitleTelugu}
+              </p>
+            )}
             <div className="flex flex-wrap gap-2.5 sm:gap-3 mt-8 stagger-fade">
               {settings.highlights.slice(0, 3).map((h) => (
                 <span
@@ -301,6 +306,9 @@ export default function HomePage() {
         <AnimateOnScroll>
           <div className="relative max-w-3xl mx-auto px-4 text-center">
             <div className="hero-content-panel-center">
+              {settings.contactHeadingTelugu && (
+                <p className="text-[#e8f4ef] text-base font-medium mb-2">{settings.contactHeadingTelugu}</p>
+              )}
               <p className="text-[#e8f4ef] text-sm font-semibold tracking-widest uppercase mb-4">Don't Delay — Contact Us Today</p>
               <h2 className="font-display text-3xl lg:text-5xl font-bold text-white mb-4 hero-text-shadow">
                 {settings.ctaTitle || 'Achieve Your Dreams With Us'}
@@ -315,9 +323,9 @@ export default function HomePage() {
                 <Link to="/sellers" className="px-6 sm:px-10 py-4 bg-white text-[#075E54] font-semibold rounded-xl transition-all hover:scale-105 shine-hover text-sm sm:text-base text-center">
                   List Your Property
                 </Link>
-                <Link to="/contact" className="px-6 sm:px-10 py-4 border border-white/40 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all hover:scale-105 text-sm sm:text-base text-center">
-                  Contact Us
-                </Link>
+                <a href={`mailto:${settings.email}`} className="px-6 sm:px-10 py-4 border border-white/40 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all hover:scale-105 text-sm sm:text-base text-center">
+                  {settings.email}
+                </a>
               </div>
             </div>
           </div>

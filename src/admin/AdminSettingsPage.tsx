@@ -54,7 +54,7 @@ export default function AdminSettingsPage() {
             </div>
             <div>
               <label className={labelClass}>WhatsApp Number (with country code, no +)</label>
-              <input value={form.whatsappNumber} onChange={(e) => update('whatsappNumber', e.target.value)} className={inputClass} placeholder="919876543210" />
+              <input value={form.whatsappNumber} onChange={(e) => update('whatsappNumber', e.target.value)} className={inputClass} placeholder="919390391534" />
             </div>
             <div className="md:col-span-2">
               <label className={labelClass}>Office Address</label>

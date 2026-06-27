@@ -354,7 +354,7 @@ export default function AdminPropertyFormPage() {
             </div>
             <div>
               <label className={labelClass}>Agent Phone</label>
-              <input value={form.agentPhone} onChange={(e) => update('agentPhone', e.target.value)} className={inputClass} placeholder="+91 98765 43210" />
+              <input value={form.agentPhone} onChange={(e) => update('agentPhone', e.target.value)} className={inputClass} placeholder="+91 93903 91534" />
             </div>
           </div>
         </div>

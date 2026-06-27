@@ -105,6 +105,8 @@ export interface SiteSettings {
   heroImage: string
   heroTitle: string
   heroSubtitle: string
+  heroSubtitleTelugu?: string
+  contactHeadingTelugu?: string
   heroBadge?: string
   aboutIntro?: string
   aboutStory?: string

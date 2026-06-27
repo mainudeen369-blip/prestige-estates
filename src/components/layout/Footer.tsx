@@ -13,7 +13,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Logo variant="dark" showText={true} className="mb-4" />
-            <p className="text-sm leading-relaxed mb-6 text-slate-700">{settings.tagline}</p>
+            <p className="text-sm leading-relaxed mb-2 text-slate-700">{settings.tagline}</p>
+            {settings.taglineTelugu && (
+              <p className="text-sm leading-relaxed mb-4 text-slate-600">{settings.taglineTelugu}</p>
+            )}
+            {settings.serviceAreas.length > 0 && (
+              <p className="text-xs text-slate-600 mb-6">
+                Serving {settings.serviceAreas.join(' & ')}
+              </p>
+            )}
             <div className="flex gap-3">
               {settings.facebook && (
                 <a href={settings.facebook} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-[#075E54]/10 flex items-center justify-center hover:bg-[#25D366]/15 hover:text-[#075E54] transition-colors" aria-label="Facebook">

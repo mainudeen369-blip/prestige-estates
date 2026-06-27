@@ -204,8 +204,8 @@ export default function AboutPage() {
         <AnimateOnScroll>
           <div className="bg-brand-dark rounded-3xl p-10 text-center text-white mb-24 relative overflow-hidden">
             <div className="relative">
-              <h2 className="font-display text-2xl lg:text-3xl font-bold text-dark-body mb-3">Ready to Find Your Property?</h2>
-              <p className="text-dark-muted mb-6 max-w-lg mx-auto">Call us today — why wait? Your dream property is just one conversation away.</p>
+              <h2 className="font-display text-2xl lg:text-3xl font-bold text-dark-body mb-3">{settings.ctaTitle}</h2>
+              <p className="text-dark-muted mb-6 max-w-lg mx-auto">{settings.ctaSubtitle}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={`tel:${settings.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-[#075E54] font-semibold rounded-xl hover:scale-105 transition-transform shine-hover">
                   <Phone className="w-4 h-4" /> {settings.phone}

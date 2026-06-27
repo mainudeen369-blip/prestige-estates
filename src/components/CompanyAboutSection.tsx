@@ -116,7 +116,7 @@ export default function CompanyAboutSection() {
                   <Mail className="w-4 h-4 text-[#128C7E]" /> {settings.email}
                 </a>
                 <span className="flex items-center gap-2 text-sm text-light-body">
-                  <MapPin className="w-4 h-4 text-[#128C7E]" /> Serving AP & Telangana
+                  <MapPin className="w-4 h-4 text-[#128C7E]" /> {settings.address}
                 </span>
               </div>
             </div>

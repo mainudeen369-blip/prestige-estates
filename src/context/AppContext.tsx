@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import { defaultSiteSettings, seedProperties } from '../data/seed'
+import { pdfBrochureFields, PDF_SETTINGS_VERSION } from '../data/company'
 import { seedBuyers, seedSellers, seedDeals } from '../data/crm-seed'
 import { generateId, slugify } from '../utils/helpers'
 import type { Inquiry, Property, SiteSettings } from '../types'
@@ -7,6 +8,40 @@ import type { Buyer, Seller, Deal } from '../types/crm'
 
 const STORAGE_KEY = 'prestige-estates-data-v2'
 const AUTH_KEY = 'prestige-estates-auth'
+const PDF_SYNC_KEY = 'prestige-estates-pdf-sync'
+
+function ensurePdfSettings(settings: SiteSettings): SiteSettings {
+  const synced = localStorage.getItem(PDF_SYNC_KEY)
+  const contactFromPdf = {
+    phone: defaultSiteSettings.phone,
+    email: defaultSiteSettings.email,
+    whatsappNumber: defaultSiteSettings.whatsappNumber,
+    address: defaultSiteSettings.address,
+    serviceAreas: defaultSiteSettings.serviceAreas,
+    companyName: defaultSiteSettings.companyName,
+    companyNameTelugu: defaultSiteSettings.companyNameTelugu,
+  }
+
+  if (synced === String(PDF_SETTINGS_VERSION)) {
+    return { ...settings, ...contactFromPdf }
+  }
+
+  localStorage.setItem(PDF_SYNC_KEY, String(PDF_SETTINGS_VERSION))
+  const team = (settings.team?.length ? settings.team : defaultSiteSettings.team).map((member, i) => ({
+    ...(defaultSiteSettings.team[i] ?? member),
+    ...member,
+    phone: defaultSiteSettings.phone,
+  }))
+
+  return {
+    ...settings,
+    ...pdfBrochureFields(defaultSiteSettings),
+    ...contactFromPdf,
+    team,
+    facebook: defaultSiteSettings.facebook,
+    instagram: defaultSiteSettings.instagram,
+  }
+}
 
 interface AppData {
   properties: Property[]
@@ -77,7 +112,7 @@ function loadData(): AppData {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored) {
       const parsed = JSON.parse(stored)
-      const settings = { ...defaults.settings, ...parsed.settings }
+      const settings = ensurePdfSettings({ ...defaults.settings, ...parsed.settings })
       if (
         settings.heroImage?.includes('photo-1560518883-ce09059eeffa') ||
         settings.heroImage?.includes('photo-1500382017468-9049fed747aa')
@@ -93,7 +128,7 @@ function loadData(): AppData {
     const legacy = localStorage.getItem('prestige-estates-data')
     if (legacy) {
       const parsed = JSON.parse(legacy)
-      return { ...defaults, ...parsed, settings: { ...defaults.settings, ...parsed.settings } }
+      return { ...defaults, ...parsed, settings: ensurePdfSettings({ ...defaults.settings, ...parsed.settings }) }
     }
   } catch {
     /* use defaults */

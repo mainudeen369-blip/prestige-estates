@@ -24,10 +24,13 @@ export default function ContactPage() {
     <div className="bg-page-soft min-h-screen overflow-x-clip w-full">
       <div className="bg-brand-hero py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {settings.contactHeadingTelugu && (
+            <p className="text-dark-label text-base font-medium mb-2">{settings.contactHeadingTelugu}</p>
+          )}
           <p className="text-dark-label text-sm font-semibold tracking-widest uppercase mb-2">Get in Touch</p>
           <h1 className="font-display text-4xl font-bold text-dark-body">Contact Us</h1>
           <p className="text-dark-muted mt-3 max-w-xl mx-auto">
-            Have a question or want to schedule a viewing? We'd love to hear from you.
+            {settings.ctaSubtitle || 'Have a question about land or buildings? Call, WhatsApp, or email us — we serve Andhra Pradesh & Telangana.'}
           </p>
         </div>
       </div>
@@ -51,8 +54,15 @@ export default function ContactPage() {
             </div>
             <div className="bg-white rounded-2xl border border-slate-100 p-6">
               <MapPin className="w-6 h-6 text-[#128C7E] mb-3" />
-              <h3 className="font-semibold text-slate-900 mb-1">Office</h3>
-              <p className="text-light-body text-sm">{settings.address}</p>
+              <h3 className="font-semibold text-slate-900 mb-1">Service Areas</h3>
+              <p className="text-light-body text-sm mb-2">{settings.address}</p>
+              <div className="flex flex-wrap gap-2">
+                {settings.serviceAreas.map((area) => (
+                  <span key={area} className="px-3 py-1 bg-[#ecfdf5] text-[#075E54] text-xs font-medium rounded-full">
+                    {area}
+                  </span>
+                ))}
+              </div>
             </div>
             <a
               href={whatsappLink}
@@ -99,7 +109,7 @@ export default function ContactPage() {
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/50"
-                      placeholder="+91 98765 43210"
+                      placeholder={settings.phone}
                     />
                   </div>
                 </div>
@@ -111,7 +121,7 @@ export default function ContactPage() {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/50"
-                    placeholder="john@example.com"
+                      placeholder={settings.email}
                   />
                 </div>
                 <div className="mb-6">
@@ -140,7 +150,7 @@ export default function ContactPage() {
         <div className="mt-16 rounded-2xl overflow-hidden h-[400px]">
           <iframe
             title="Office location"
-            src={`https://maps.google.com/maps?q=${encodeURIComponent(settings.address)}&output=embed`}
+            src={`https://maps.google.com/maps?q=${encodeURIComponent('Andhra Pradesh and Telangana, India')}&output=embed`}
             className="w-full h-full border-0"
             loading="lazy"
           />

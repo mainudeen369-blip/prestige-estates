@@ -1,11 +1,13 @@
 import type { SiteSettings } from '../types'
 
-/** Content translated & enriched from Doc/a4.pdf — Sri Anjaneya Realtor */
+/** Content translated from Doc/a4.pdf — Sri Anjaneya Realtor */
+export const PDF_SETTINGS_VERSION = 2
+
 export const defaultSiteSettings: SiteSettings = {
   companyName: 'Sri Anjaneya Realtor',
   companyNameTelugu: 'శ్రీ ఆంజనేయ రియల్టర్',
   tagline: 'Your One-Stop Solution for Land & Buildings',
-  taglineTelugu: 'భూమి మరియు భవనాల అవసరాలకు ఒకే పరిష్కార వేదిక',
+  taglineTelugu: 'భూమి మరియు భవనాలు తదితర అన్ని అవసరాలకు ఒకే ఒక్క పరిష్కార వేదిక',
   phone: '+91 93903 91534',
   email: 'srianjaneyarealtor@gmail.com',
   whatsappNumber: '919390391534',
@@ -14,47 +16,82 @@ export const defaultSiteSettings: SiteSettings = {
   heroBadge: 'Trusted Across AP & Telangana',
   heroTitle: 'Your Dream Land & Home Awaits',
   heroSubtitle:
-    'From fertile agricultural fields to premium vacant plots, beautiful homes to thriving commercial spaces — Sri Anjaneya Realtor brings every property dream within your reach.',
+    'Vacant plots, agricultural lands, residential homes, and commercial properties — our services are available across Andhra Pradesh and Telangana.',
+  heroSubtitleTelugu:
+    'ఆంధ్ర ప్రదేశ్ మరియు తెలంగాణ రాష్ట్రాలలో మా సేవలు అందుబాటులో ఉన్నాయి. మా వద్ద వ్యవసాయ భూములు, ఖాళీ స్థలాలు, నివాస భవనాలు మరియు వాణిజ్య భవనాలు అందుబాటులో ఉన్నాయి.',
+  contactHeadingTelugu: 'మమ్మల్ని సంప్రదించండి',
   aboutTitle: 'Building Trust, One Property at a Time',
   aboutIntro:
-    'At Sri Anjaneya Realtor, we believe every family deserves a place to call their own — whether it is a patch of farmland, a plot to build on, or a home filled with memories.',
+    'Sri Anjaneya Realtor is your one-stop solution for land, buildings, and every related property need across Andhra Pradesh and Telangana.',
   aboutContent:
-    'We are your trusted one-stop destination for all land and building needs across Andhra Pradesh and Telangana. Agricultural lands, vacant plots, residential homes, and commercial properties — carefully selected, legally verified, and offered with complete transparency. For over 15 years, families and investors have relied on us for safe investments and lifetime trust.',
+    'We offer vacant plots, agricultural lands, residential buildings, and commercial properties — carefully selected and backed by clear guidance. Whether you are buying your first plot, investing in farmland, or searching for a home or commercial space, we help you move forward with confidence.',
   aboutStory:
-    'What began as a passion to help people find the right land has grown into a full-service real estate platform serving buyers, sellers, and investors across two states. We understand the heart of Telugu land — totapadu gardens, magani fields, residential layouts in developing areas, and commercial hubs in growing cities. Every property we list carries our promise: honest guidance, clear documents, and unwavering support until you hold the keys — or the title deed — in your hands.',
+    'From totapadu garden lands and magani fields to residential layouts in developing areas and commercial hubs in growing cities — we understand Telugu land and local markets deeply. Every deal carries our promise: honest guidance, clear documents, and support until registration and handover.',
   mission:
-    'To guide every buyer and seller with honesty and warmth — connecting people to properties that build wealth, security, and happiness across Andhra Pradesh and Telangana.',
+    'To connect buyers and sellers with the right land and buildings — with transparency, fair pricing, and personal care in every transaction.',
   vision:
-    'To be the most loved and trusted realtor in South India, where every customer says: "My dream became reality with Sri Anjaneya Realtor."',
+    'To be the most trusted name for land and buildings in Andhra Pradesh and Telangana — where every customer says their dream was fulfilled with Sri Anjaneya Realtor.',
   yearsExperience: 15,
   propertiesSold: 850,
   happyClients: 2100,
   heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2400&q=95&auto=format&fit=crop',
-  ctaTitle: 'Why Wait? Your Property Journey Starts Today',
+  ctaTitle: 'Why Delay? Achieve Your Dreams With Us',
   ctaSubtitle:
-    'Whether you want to buy fertile land, sell your property, or invest in a developing area — call us now. Safe investment. Lifetime trust. Your dream, our commitment.',
+    'Contact us today — safe investment, lifetime trust. Call or WhatsApp now.',
   trustPoints: [
-    { title: 'Clear Title Properties', desc: 'Every listing verified for legal clarity — no surprises, no hidden issues.' },
-    { title: 'Developed & Developing Areas', desc: 'Choose fully developed locations or invest early in tomorrow\'s hotspots.' },
-    { title: 'Affordable Outskirts Options', desc: 'Premium land and buildings at prices that respect your budget.' },
-    { title: 'Lifetime Trust Guarantee', desc: 'We stand by every deal — your satisfaction is our reputation.' },
+    {
+      title: 'Developed Areas',
+      desc: 'Lands and buildings in fully developed locations with roads, water, electricity, and modern facilities.',
+    },
+    {
+      title: 'Developing Areas',
+      desc: 'Smart options in growing locations — ideal for investors and buyers planning for the future.',
+    },
+    {
+      title: 'Affordable Outskirts',
+      desc: 'Quality lands and buildings in peaceful outskirts at prices that respect your budget.',
+    },
+    {
+      title: 'Safe Investment & Lifetime Trust',
+      desc: 'Clear documentation, verified listings, and a reputation built on lasting customer trust.',
+    },
   ],
   serviceCategories: [
     {
       title: 'Vacant Plots',
-      items: ['Open plots in developing areas', 'Residential layout plots', 'Commercial plot sites', 'Affordable outskirts land'],
+      items: [
+        'Open plots in developing areas',
+        'Residential layout plots',
+        'Commercial plot sites',
+        'Residential & commercial land parcels',
+      ],
     },
     {
       title: 'Agricultural Lands',
-      items: ['Totapadu (garden) lands', 'Magani lands', 'Metta (elevated) lands', 'Seed (Beedu) cultivation lands'],
+      items: [
+        'Totapadu (garden) lands',
+        'Magani lands',
+        'Metta (elevated) lands',
+        'Beedu (seed) cultivation lands',
+      ],
     },
     {
       title: 'Residential',
-      items: ['Individual houses & villas', 'Farmhouses in nature', 'Apartments & gated communities', 'Residential land parcels'],
+      items: [
+        'Individual houses & villas',
+        'Farmhouses in nature',
+        'Apartments & gated communities',
+        'Residential land parcels',
+      ],
     },
     {
       title: 'Commercial',
-      items: ['Shops, malls & complexes', 'Factories, godowns & warehouses', 'Hotels, resorts & apartments', 'Banks & office spaces'],
+      items: [
+        'Factories, godowns & warehouses',
+        'Shops, malls & complexes',
+        'Hotels, resorts & apartments',
+        'Banks & office spaces',
+      ],
     },
   ],
   startingPrices: [
@@ -65,20 +102,20 @@ export const defaultSiteSettings: SiteSettings = {
   ],
   highlights: [
     'Developed areas with all modern facilities — roads, water, electricity ready',
-    'Developing areas perfect for smart investors seeking future growth',
+    'Developing areas perfect for future needs — smart lands and buildings',
     'Affordable lands & buildings in peaceful outskirts',
     'Safe investment backed by clear legal documentation',
-    'A lifetime of trust — because your dream home deserves nothing less',
+    'A lifetime of trust — because your dream property deserves nothing less',
     'Achieve your dreams with Sri Anjaneya Realtor — why delay?',
   ],
-  facebook: 'https://facebook.com',
-  instagram: 'https://instagram.com',
+  facebook: '',
+  instagram: '',
   team: [
     {
       id: '1',
       name: 'Sri Anjaneya Realtor',
       role: 'Founder & Lead Agent',
-      bio: 'Leading expert in agricultural land, vacant plots, and residential properties. Trusted by hundreds of families across AP & Telangana.',
+      bio: 'Expert in agricultural land, vacant plots, residential and commercial properties across Andhra Pradesh and Telangana.',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=90',
       phone: '+91 93903 91534',
       propertiesSold: 420,
@@ -87,7 +124,7 @@ export const defaultSiteSettings: SiteSettings = {
       id: '2',
       name: 'Priya Reddy',
       role: 'Residential Specialist',
-      bio: 'Passionate about matching families with their perfect home in Hyderabad, Vijayawada, and surrounding cities.',
+      bio: 'Helping families find homes and residential plots in Hyderabad, Vijayawada, and surrounding cities.',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=90',
       phone: '+91 93903 91534',
       propertiesSold: 285,
@@ -102,4 +139,36 @@ export const defaultSiteSettings: SiteSettings = {
       propertiesSold: 145,
     },
   ],
+}
+
+/** Brochure fields from Doc/a4.pdf — synced on load for existing visitors */
+export function pdfBrochureFields(settings: SiteSettings): Partial<SiteSettings> {
+  return {
+    companyName: settings.companyName,
+    companyNameTelugu: settings.companyNameTelugu,
+    tagline: settings.tagline,
+    taglineTelugu: settings.taglineTelugu,
+    phone: settings.phone,
+    email: settings.email,
+    whatsappNumber: settings.whatsappNumber,
+    address: settings.address,
+    serviceAreas: settings.serviceAreas,
+    heroBadge: settings.heroBadge,
+    heroTitle: settings.heroTitle,
+    heroSubtitle: settings.heroSubtitle,
+    heroSubtitleTelugu: settings.heroSubtitleTelugu,
+    contactHeadingTelugu: settings.contactHeadingTelugu,
+    aboutTitle: settings.aboutTitle,
+    aboutIntro: settings.aboutIntro,
+    aboutContent: settings.aboutContent,
+    aboutStory: settings.aboutStory,
+    mission: settings.mission,
+    vision: settings.vision,
+    ctaTitle: settings.ctaTitle,
+    ctaSubtitle: settings.ctaSubtitle,
+    trustPoints: settings.trustPoints,
+    serviceCategories: settings.serviceCategories,
+    startingPrices: settings.startingPrices,
+    highlights: settings.highlights,
+  }
 }
