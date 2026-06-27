@@ -105,6 +105,12 @@ export interface SiteSettings {
   heroImage: string
   heroTitle: string
   heroSubtitle: string
+  heroBadge?: string
+  aboutIntro?: string
+  aboutStory?: string
+  trustPoints?: { title: string; desc: string }[]
+  ctaTitle?: string
+  ctaSubtitle?: string
   serviceCategories: ServiceCategory[]
   startingPrices: StartingPrice[]
   highlights: string[]
