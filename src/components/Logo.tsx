@@ -30,9 +30,7 @@ export default function Logo({ variant = 'light', showText = true, className = '
           }`}>
             Sri Anjaneya
           </span>
-          <span className={`text-[10px] sm:text-xs tracking-widest uppercase block ${
-            isLight ? 'text-gold-400' : 'text-emerald-600'
-          }`}>
+          <span className="text-[10px] sm:text-xs tracking-widest uppercase block text-[#128C7E]">
             Realtor
           </span>
         </div>

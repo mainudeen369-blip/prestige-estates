@@ -49,7 +49,7 @@ export default function HomePage() {
         <div className="absolute inset-0 overflow-hidden">
           <img src={settings.heroImage} alt="Property" className="w-full h-full object-cover animate-ken-burns" />
           <div className="absolute inset-0 bg-brand-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-t from-amber-900/45 via-transparent to-amber-200/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#075E54]/45 via-transparent to-[#dcf8e8]/30" />
         </div>
         <FloatingParticles />
         <div className="absolute top-20 right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-float hidden lg:block" />
@@ -104,7 +104,7 @@ export default function HomePage() {
 
       {/* Starting prices banner */}
       <section className="py-12 bg-brand-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-200/30 via-amber-400/20 to-amber-600/25 animate-gradient" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#dcf8e8]/40 via-[#25D366]/15 to-[#128C7E]/20 animate-gradient" />
         <div className="max-w-7xl mx-auto px-4 relative">
           <AnimateOnScroll>
             <p className="text-center text-gold-400 text-sm font-semibold tracking-widest uppercase mb-6">Affordable Properties — Starting From</p>
@@ -217,7 +217,7 @@ export default function HomePage() {
 
       {/* Highlights strip */}
       <section className="py-16 bg-brand-dark relative overflow-hidden">
-        <div className="absolute inset-0 opacity-40 animate-gradient bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300" />
+        <div className="absolute inset-0 opacity-35 animate-gradient bg-gradient-to-r from-[#dcf8e8] via-[#25D366] to-[#128C7E]" />
         <div className="max-w-7xl mx-auto px-4 relative">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {settings.highlights.map((h, i) => (

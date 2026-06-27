@@ -16,48 +16,53 @@
   --color-brand-bronze: #6b4f1d;
   --color-brand-espresso: #2c1810;
   --color-brand-walnut: #3d2b1f;
+  --color-wa-green: #25D366;
+  --color-wa-teal: #128C7E;
+  --color-wa-dark: #075E54;
+  --color-wa-soft: #e8f8ef;
+  --color-wa-chat: #ece5dd;
 }
 
-/* Dual-color brand backgrounds — medium gold + warm cream/amber mix */
+/* Soft WhatsApp green dual-color backgrounds */
 .bg-brand-header {
-  background: linear-gradient(110deg, #f5e6b8 0%, #e8c872 28%, #d4af37 58%, #c9a227 100%);
+  background: linear-gradient(110deg, #f0fdf6 0%, #dcf8e8 32%, #c5eed9 62%, #a8e6c3 100%);
 }
 
 .bg-brand-footer {
-  background: linear-gradient(165deg, #fde68a 0%, #f5e6b8 40%, #d4af37 100%);
+  background: linear-gradient(165deg, #e8f8ef 0%, #d4f4e2 45%, #c8f0dc 100%);
 }
 
 .bg-page-soft {
-  background: linear-gradient(180deg, #fffdf7 0%, #fef9ee 45%, #fdf4e3 100%);
+  background: linear-gradient(180deg, #f5f9f7 0%, #eef6f2 48%, #ece5dd 100%);
   background-attachment: fixed;
 }
 
 .bg-brand-hero {
-  background: linear-gradient(125deg, #e8c872 0%, #d4af37 45%, #b8941f 100%);
+  background: linear-gradient(125deg, #25D366 0%, #20bd5a 42%, #128C7E 100%);
 }
 
 .bg-brand-dark {
-  background: linear-gradient(135deg, #d4af37 0%, #c9a227 48%, #a8861e 100%);
+  background: linear-gradient(135deg, #128C7E 0%, #0f9b6e 50%, #075E54 100%);
 }
 
 .bg-brand-overlay {
-  background: linear-gradient(115deg, rgba(212, 175, 55, 0.82) 0%, rgba(232, 200, 114, 0.75) 50%, rgba(184, 148, 31, 0.85) 100%);
+  background: linear-gradient(115deg, rgba(37, 211, 102, 0.72) 0%, rgba(18, 140, 126, 0.78) 50%, rgba(7, 94, 84, 0.82) 100%);
 }
 
 .bg-brand-card {
-  background: linear-gradient(145deg, #e8c872 0%, #c9a227 55%, #a8861e 100%);
+  background: linear-gradient(145deg, #25D366 0%, #128C7E 55%, #075E54 100%);
 }
 
 .bg-section-light {
-  background: linear-gradient(180deg, #ffffff 0%, #fef9ee 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #eefbf4 100%);
 }
 
 .bg-section-cream {
-  background: linear-gradient(180deg, #fef3c7 0%, #fffdf7 55%, #fde68a 100%);
+  background: linear-gradient(180deg, #dcf8e8 0%, #ffffff 55%, #f5f9f7 100%);
 }
 
 .bg-brand-marquee {
-  background: linear-gradient(90deg, #f5e6b8 0%, #d4af37 50%, #f5e6b8 100%);
+  background: linear-gradient(90deg, #eefbf4 0%, #b8ebd0 50%, #eefbf4 100%);
 }
 
 * {
