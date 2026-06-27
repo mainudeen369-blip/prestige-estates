@@ -43,7 +43,7 @@ export default function AnimateOnScroll({
   return (
     <div
       ref={ref}
-      className={`aos ${dirClass} ${visible ? 'aos-visible' : ''} ${className}`}
+      className={`aos ${dirClass} ${visible ? 'aos-visible' : ''} min-w-0 max-w-full ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

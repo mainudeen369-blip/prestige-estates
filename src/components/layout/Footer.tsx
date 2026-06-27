@@ -68,7 +68,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold-400 shrink-0" />
-                <a href={`mailto:${settings.email}`} className="hover:text-gold-400 transition-colors">{settings.email}</a>
+                <a href={`mailto:${settings.email}`} className="hover:text-gold-400 transition-colors break-all">{settings.email}</a>
               </li>
             </ul>
           </div>

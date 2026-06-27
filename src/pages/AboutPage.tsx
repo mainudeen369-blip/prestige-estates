@@ -10,7 +10,7 @@ export default function AboutPage() {
   const whatsappLink = getWhatsAppLink(settings.whatsappNumber, `Hi ${settings.companyName}! I'd like to know more about your services.`)
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen overflow-x-clip w-full">
       {/* Hero */}
       <div className="relative min-h-[55vh] flex items-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=1920&q=90" alt="About" className="absolute inset-0 w-full h-full object-cover animate-ken-burns" />
@@ -53,7 +53,7 @@ export default function AboutPage() {
                   <span key={a} className="px-4 py-1.5 bg-navy-900 text-white text-sm rounded-full shine-hover">{a}</span>
                 ))}
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
                   { val: `${settings.yearsExperience}+`, label: 'Years Trust' },
                   { val: `${settings.propertiesSold}+`, label: 'Properties Sold' },
@@ -68,16 +68,16 @@ export default function AboutPage() {
             </div>
           </AnimateOnScroll>
           <AnimateOnScroll direction="right">
-            <div className="relative">
-              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=800&q=90" alt="Land" className="rounded-2xl shadow-2xl" />
-              <div className="absolute -bottom-6 -left-6 bg-gradient-to-br from-gold-500 to-gold-600 text-navy-950 p-6 rounded-2xl shadow-xl max-w-[240px] shine-hover">
+            <div className="relative overflow-hidden rounded-2xl">
+              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=800&q=90" alt="Land" className="w-full rounded-2xl shadow-2xl" />
+              <div className="absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 bg-gradient-to-br from-gold-500 to-gold-600 text-navy-950 p-4 sm:p-6 rounded-2xl shadow-xl max-w-[calc(100%-2rem)] sm:max-w-[240px] shine-hover">
                 <Quote className="w-6 h-6 mb-2 opacity-70" />
                 <p className="text-sm font-semibold leading-relaxed">
                   "Safe investment with lifetime trust — achieve your dreams with Sri Anjaneya Realtor."
                 </p>
               </div>
-              <div className="absolute -top-4 -right-4 bg-emerald-500 text-white p-4 rounded-2xl shadow-lg animate-bounce-subtle">
-                <Sparkles className="w-6 h-6" />
+              <div className="absolute top-4 right-4 sm:-top-4 sm:-right-4 bg-emerald-500 text-white p-3 sm:p-4 rounded-2xl shadow-lg animate-bounce-subtle">
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
             </div>
           </AnimateOnScroll>

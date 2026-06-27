@@ -10,8 +10,8 @@ export default function CompanyAboutSection() {
 
   return (
     <section className="py-28 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden">
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-10 left-0 w-72 h-72 bg-gold-500/8 rounded-full blur-3xl animate-float-delay" />
+      <div className="absolute top-20 right-0 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-emerald-500/5 rounded-full blur-3xl animate-float pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-gold-500/8 rounded-full blur-3xl animate-float-delay pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <AnimateOnScroll>
@@ -111,7 +111,7 @@ export default function CompanyAboutSection() {
                 <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-navy-900 font-semibold hover:text-emerald-700 transition-colors">
                   <Phone className="w-4 h-4 text-emerald-600" /> {settings.phone}
                 </a>
-                <a href={`mailto:${settings.email}`} className="flex items-center gap-2 text-sm text-navy-900 font-medium hover:text-emerald-700">
+                <a href={`mailto:${settings.email}`} className="flex items-center gap-2 text-sm text-navy-900 font-medium hover:text-emerald-700 break-all">
                   <Mail className="w-4 h-4 text-emerald-600" /> {settings.email}
                 </a>
                 <span className="flex items-center gap-2 text-sm text-slate-600">

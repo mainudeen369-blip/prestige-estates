@@ -27,10 +27,10 @@ export default function HeroSearch() {
   return (
     <form
       onSubmit={handleSearch}
-      className="w-full max-w-4xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 sm:p-6 border border-white/20"
+      className="w-full max-w-4xl mx-auto min-w-0 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 sm:p-6 border border-white/20"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-        <div className="lg:col-span-2 relative">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 min-w-0">
+        <div className="lg:col-span-2 relative min-w-0">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
           <input
             type="text"
@@ -43,7 +43,7 @@ export default function HeroSearch() {
         <select
           value={listingType}
           onChange={(e) => setListingType(e.target.value)}
-          className="px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/50 bg-white"
+          className="w-full min-w-0 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/50 bg-white"
         >
           <option value="">Buy or Rent</option>
           {LISTING_TYPES.map((t) => (
@@ -53,14 +53,14 @@ export default function HeroSearch() {
         <select
           value={propertyType}
           onChange={(e) => setPropertyType(e.target.value)}
-          className="px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/50 bg-white"
+          className="w-full min-w-0 px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/50 bg-white"
         >
           <option value="">Property Type</option>
           {PROPERTY_TYPES.map((t) => (
             <option key={t} value={t}>{t}</option>
           ))}
         </select>
-        <div className="relative">
+        <div className="relative min-w-0">
           <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
           <select
             value={city}

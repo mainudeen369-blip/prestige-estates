@@ -16,6 +16,13 @@
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -34,6 +41,8 @@ body {
 
 .animate-ken-burns {
   animation: ken-burns 20s ease-in-out infinite alternate;
+  transform-origin: center center;
+  max-width: none;
 }
 
 /* Fade up entrance */
@@ -103,6 +112,13 @@ body {
 .aos-left { transform: translateX(-40px); }
 .aos-right { transform: translateX(40px); }
 .aos-scale { transform: scale(0.92); }
+
+@media (max-width: 767px) {
+  .aos-left,
+  .aos-right {
+    transform: translateY(24px);
+  }
+}
 
 .aos-visible {
   opacity: 1;

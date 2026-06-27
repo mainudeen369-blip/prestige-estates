@@ -35,22 +35,22 @@ export default function PropertyFiltersBar({ filters, onChange, resultCount }: P
   const hasFilters = Object.values(filters).some((v) => v !== '')
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-      <div className="flex flex-col sm:flex-row gap-3">
-        <div className="flex-1 relative">
+    <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm overflow-hidden">
+      <div className="flex flex-col lg:flex-row flex-wrap gap-3">
+        <div className="flex-1 min-w-0 w-full basis-full lg:basis-0 relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
           <input
             type="text"
             placeholder="Search properties..."
             value={filters.search}
             onChange={(e) => update('search', e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/50"
+            className="w-full min-w-0 pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/50"
           />
         </div>
         <select
           value={filters.listingType}
           onChange={(e) => update('listingType', e.target.value)}
-          className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm bg-white"
+          className="w-full lg:w-auto lg:flex-1 min-w-0 px-4 py-2.5 rounded-xl border border-slate-200 text-sm bg-white"
         >
           <option value="">All Listings</option>
           {LISTING_TYPES.map((t) => (
@@ -60,7 +60,7 @@ export default function PropertyFiltersBar({ filters, onChange, resultCount }: P
         <select
           value={filters.propertyType}
           onChange={(e) => update('propertyType', e.target.value)}
-          className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm bg-white"
+          className="w-full lg:w-auto lg:flex-1 min-w-0 px-4 py-2.5 rounded-xl border border-slate-200 text-sm bg-white"
         >
           <option value="">All Types</option>
           {PROPERTY_TYPES.map((t) => (
@@ -70,7 +70,7 @@ export default function PropertyFiltersBar({ filters, onChange, resultCount }: P
         <select
           value={filters.city}
           onChange={(e) => update('city', e.target.value)}
-          className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm bg-white"
+          className="w-full lg:w-auto lg:flex-1 min-w-0 px-4 py-2.5 rounded-xl border border-slate-200 text-sm bg-white"
         >
           <option value="">All Cities</option>
           {cities.map((c) => (
@@ -79,7 +79,7 @@ export default function PropertyFiltersBar({ filters, onChange, resultCount }: P
         </select>
         <button
           onClick={() => setShowAdvanced(!showAdvanced)}
-          className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-sm hover:bg-slate-50 transition-colors"
+          className="flex items-center justify-center gap-2 w-full lg:w-auto px-4 py-2.5 rounded-xl border border-slate-200 text-sm hover:bg-slate-50 transition-colors shrink-0"
         >
           <SlidersHorizontal className="w-4 h-4" />
           Filters

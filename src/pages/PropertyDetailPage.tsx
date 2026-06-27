@@ -39,7 +39,7 @@ export default function PropertyDetailPage() {
   ]
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen overflow-x-clip w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link to="/listings" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-gold-600 mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4" /> Back to listings

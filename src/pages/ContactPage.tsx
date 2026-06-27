@@ -21,7 +21,7 @@ export default function ContactPage() {
   )
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen overflow-x-clip w-full">
       <div className="bg-navy-950 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold-400 text-sm font-semibold tracking-widest uppercase mb-2">Get in Touch</p>

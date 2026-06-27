@@ -21,7 +21,7 @@ export default function BuyersPage() {
   )
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen overflow-x-clip w-full">
       <div className="bg-navy-950 py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-10 right-20 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-float" />

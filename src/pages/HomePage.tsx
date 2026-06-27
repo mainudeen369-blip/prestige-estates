@@ -45,8 +45,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden w-full">
+        <div className="absolute inset-0 overflow-hidden">
           <img src={settings.heroImage} alt="Property" className="w-full h-full object-cover animate-ken-burns" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/80 to-navy-950/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
@@ -55,8 +55,8 @@ export default function HomePage() {
         <div className="absolute top-20 right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-float hidden lg:block" />
         <div className="absolute bottom-32 left-10 w-56 h-56 bg-gold-500/10 rounded-full blur-3xl animate-float-delay hidden lg:block" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
-          <div className="max-w-3xl mb-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full min-w-0">
+          <div className="max-w-3xl mb-10 min-w-0">
             {settings.heroBadge && (
               <p className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold tracking-widest uppercase rounded-full mb-6 animate-scale-in">
                 <Sparkles className="w-3.5 h-3.5" /> {settings.heroBadge}
@@ -65,7 +65,7 @@ export default function HomePage() {
             {settings.companyNameTelugu && (
               <p className="text-gold-400/90 text-base font-medium mb-3 animate-fade-up">{settings.companyNameTelugu}</p>
             )}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 animate-fade-up">
+            <h1 className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 animate-fade-up break-words">
               {settings.heroTitle.split(' ').slice(0, -2).join(' ')}{' '}
               <span className="text-shimmer">{settings.heroTitle.split(' ').slice(-2).join(' ')}</span>
             </h1>
@@ -87,11 +87,11 @@ export default function HomePage() {
           <AnimateOnScroll direction="up" delay={300}>
             <HeroSearch />
           </AnimateOnScroll>
-          <div className="mt-8 flex flex-wrap gap-4 animate-fade-up">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/30">
-              <Phone className="w-4 h-4" /> Call / WhatsApp: {settings.phone}
+          <div className="mt-8 flex flex-wrap gap-3 sm:gap-4 animate-fade-up">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/30 max-w-full text-center">
+              <Phone className="w-4 h-4 shrink-0" /> Call / WhatsApp: {settings.phone}
             </a>
-            <Link to="/buyers" className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-xl transition-all hover:scale-105">
+            <Link to="/buyers" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 border border-white/30 hover:bg-white/10 text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105">
               Browse Properties <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -122,10 +122,10 @@ export default function HomePage() {
       </section>
 
       {/* Featured */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-slate-50 overflow-x-clip">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
           <AnimateOnScroll>
-            <div className="flex items-end justify-between mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
               <div>
                 <p className="text-emerald-600 text-sm font-semibold tracking-widest uppercase mb-2">Handpicked For You</p>
                 <h2 className="font-display text-3xl lg:text-5xl font-bold text-navy-900">Featured Properties</h2>
@@ -136,7 +136,7 @@ export default function HomePage() {
               </Link>
             </div>
           </AnimateOnScroll>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 min-w-0">
             {featured[0] && (
               <AnimateOnScroll direction="left">
                 <PropertyCard property={featured[0]} variant="featured" />
@@ -301,14 +301,14 @@ export default function HomePage() {
             <p className="text-slate-300 mb-10 leading-relaxed text-lg">
               {settings.ctaSubtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg shine-hover">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full max-w-lg sm:max-w-none mx-auto">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="px-6 sm:px-10 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg shine-hover text-sm sm:text-base text-center">
                 WhatsApp: {settings.phone}
               </a>
-              <Link to="/sellers" className="px-10 py-4 bg-gold-500 hover:bg-gold-600 text-navy-950 font-semibold rounded-xl transition-all hover:scale-105 shine-hover">
+              <Link to="/sellers" className="px-6 sm:px-10 py-4 bg-gold-500 hover:bg-gold-600 text-navy-950 font-semibold rounded-xl transition-all hover:scale-105 shine-hover text-sm sm:text-base text-center">
                 List Your Property
               </Link>
-              <Link to="/contact" className="px-10 py-4 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-xl transition-all hover:scale-105">
+              <Link to="/contact" className="px-6 sm:px-10 py-4 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-xl transition-all hover:scale-105 text-sm sm:text-base text-center">
                 Contact Us
               </Link>
             </div>

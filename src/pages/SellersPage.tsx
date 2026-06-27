@@ -17,7 +17,7 @@ export default function SellersPage() {
   )
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen overflow-x-clip w-full">
       <div className="bg-navy-950 py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute bottom-10 left-20 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl animate-float" />
