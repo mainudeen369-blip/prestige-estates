@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Shield, Headphones, BadgeCheck, Search, FileCheck, Handshake, Key, Sparkles, Phone } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import HeroSearch from '../components/HeroSearch'
+import HeroBackground from '../components/HeroBackground'
 import PropertyCard from '../components/PropertyCard'
 import StatsBar from '../components/StatsBar'
 import PropertyMarquee from '../components/PropertyMarquee'
 import CompanyAboutSection from '../components/CompanyAboutSection'
 import AnimateOnScroll from '../components/AnimateOnScroll'
-import FloatingParticles from '../components/FloatingParticles'
 import { filterProperties, getWhatsAppLink } from '../utils/helpers'
 
 export default function HomePage() {
@@ -47,36 +47,34 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden w-full">
         <div className="absolute inset-0 overflow-hidden">
-          <img src={settings.heroImage} alt="Property" className="w-full h-full object-cover animate-ken-burns" />
-          <div className="absolute inset-0 bg-brand-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#075E54]/45 via-transparent to-[#dcf8e8]/30" />
+          <HeroBackground
+            imageSrc={settings.heroImage}
+            imageAlt="Sri Anjaneya Realtor property"
+          />
         </div>
-        <FloatingParticles />
-        <div className="absolute top-20 right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-float hidden lg:block" />
-        <div className="absolute bottom-32 left-10 w-56 h-56 bg-gold-500/10 rounded-full blur-3xl animate-float-delay hidden lg:block" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full min-w-0">
-          <div className="max-w-3xl mb-10 min-w-0">
+          <div className="hero-content-panel max-w-3xl mb-10 min-w-0">
             {settings.heroBadge && (
-              <p className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold tracking-widest uppercase rounded-full mb-6 animate-scale-in">
+              <p className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/15 border border-white/30 text-white text-xs font-semibold tracking-widest uppercase rounded-full mb-6 animate-scale-in">
                 <Sparkles className="w-3.5 h-3.5" /> {settings.heroBadge}
               </p>
             )}
             {settings.companyNameTelugu && (
-              <p className="text-gold-400/90 text-base font-medium mb-3 animate-fade-up">{settings.companyNameTelugu}</p>
+              <p className="text-[#dcf8e8] text-base font-medium mb-3 animate-fade-up">{settings.companyNameTelugu}</p>
             )}
-            <h1 className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 animate-fade-up break-words">
+            <h1 className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 animate-fade-up break-words hero-text-shadow">
               {settings.heroTitle.split(' ').slice(0, -2).join(' ')}{' '}
-              <span className="text-shimmer">{settings.heroTitle.split(' ').slice(-2).join(' ')}</span>
+              <span className="hero-accent">{settings.heroTitle.split(' ').slice(-2).join(' ')}</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
               {settings.heroSubtitle}
             </p>
             <div className="flex flex-wrap gap-2.5 sm:gap-3 mt-8 stagger-fade">
               {settings.highlights.slice(0, 3).map((h) => (
                 <span
                   key={h}
-                  className="inline-flex items-start gap-1.5 px-3 py-2 bg-white/10 backdrop-blur border border-white/15 text-slate-200 text-xs sm:text-sm rounded-2xl leading-relaxed whitespace-normal max-w-full"
+                  className="inline-flex items-start gap-1.5 px-3 py-2 bg-white/10 border border-white/20 text-white text-xs sm:text-sm rounded-2xl leading-relaxed whitespace-normal max-w-full"
                 >
                   <span className="shrink-0 mt-0.5">✦</span>
                   <span>{h}</span>
@@ -91,7 +89,7 @@ export default function HomePage() {
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/30 max-w-full text-center">
               <Phone className="w-4 h-4 shrink-0" /> Call / WhatsApp: {settings.phone}
             </a>
-            <Link to="/buyers" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 border border-white/30 hover:bg-white/10 text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105">
+            <Link to="/buyers" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#075E54]/90 hover:bg-[#075E54] border border-white/20 text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 shadow-lg">
               Browse Properties <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -107,13 +105,13 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#dcf8e8]/40 via-[#25D366]/15 to-[#128C7E]/20 animate-gradient" />
         <div className="max-w-7xl mx-auto px-4 relative">
           <AnimateOnScroll>
-            <p className="text-center text-gold-400 text-sm font-semibold tracking-widest uppercase mb-6">Affordable Properties — Starting From</p>
+            <p className="text-center text-dark-label text-sm font-semibold tracking-widest uppercase mb-6">Affordable Properties — Starting From</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {settings.startingPrices.map((p) => (
                 <div key={p.category} className="text-center p-4 sm:p-5 rounded-2xl glass card-hover min-w-0 overflow-visible">
-                  <p className="text-xs text-slate-400 mb-1 leading-snug">{p.category}</p>
-                  <p className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-gradient-gold price-value">{p.price}</p>
-                  <p className="text-[11px] sm:text-xs text-slate-500 mt-1 leading-snug">{p.unit}</p>
+                  <p className="text-xs text-dark-muted mb-1 leading-snug">{p.category}</p>
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-dark-accent price-value">{p.price}</p>
+                  <p className="text-[11px] sm:text-xs text-dark-label mt-1 leading-snug">{p.unit}</p>
                 </div>
               ))}
             </div>
@@ -127,11 +125,11 @@ export default function HomePage() {
           <AnimateOnScroll>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
               <div>
-                <p className="text-emerald-600 text-sm font-semibold tracking-widest uppercase mb-2">Handpicked For You</p>
-                <h2 className="font-display text-3xl lg:text-5xl font-bold text-navy-900">Featured Properties</h2>
-                <p className="text-slate-500 mt-2 max-w-lg">Premium plots, homes & commercial spaces — verified and ready.</p>
+                <p className="text-light-label text-sm font-semibold tracking-widest uppercase mb-2">Handpicked For You</p>
+                <h2 className="font-display text-3xl lg:text-5xl font-bold text-slate-900">Featured Properties</h2>
+                <p className="text-light-muted mt-2 max-w-lg">Premium plots, homes & commercial spaces — verified and ready.</p>
               </div>
-              <Link to="/listings" className="hidden sm:flex items-center gap-2 text-gold-600 font-medium hover:gap-3 transition-all group shine-hover px-4 py-2 rounded-lg">
+              <Link to="/listings" className="hidden sm:flex items-center gap-2 text-[#128C7E] font-medium hover:gap-3 transition-all group shine-hover px-4 py-2 rounded-lg">
                 View All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -155,18 +153,17 @@ export default function HomePage() {
 
       {/* Process */}
       <section className="py-24 bg-brand-dark relative overflow-hidden">
-        <FloatingParticles />
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-emerald-500/15 rounded-full blur-3xl animate-float" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <AnimateOnScroll>
             <div className="text-center mb-16">
-              <p className="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-2">Simple & Transparent</p>
-              <h2 className="font-display text-3xl lg:text-5xl font-bold text-white">
-                Your Path to <span className="text-shimmer">Owning Property</span>
+              <p className="text-dark-label text-sm font-semibold tracking-widest uppercase mb-2">Simple & Transparent</p>
+              <h2 className="font-display text-3xl lg:text-5xl font-bold text-dark-body">
+                Your Path to <span className="text-dark-accent">Owning Property</span>
               </h2>
-              <p className="text-slate-400 mt-3 max-w-xl mx-auto">From first inquiry to final registration — we walk with you at every step.</p>
+              <p className="text-dark-muted mt-3 max-w-xl mx-auto">From first inquiry to final registration — we walk with you at every step.</p>
             </div>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -175,10 +172,10 @@ export default function HomePage() {
                 <div className="relative p-6 rounded-2xl glass group hover:bg-white/10 transition-all duration-500 card-hover shine-hover h-full">
                   <span className="text-5xl font-display font-bold text-emerald-500/20 absolute top-4 right-4">{step.step}</span>
                   <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                    <step.icon className="w-6 h-6 text-emerald-400" />
+                    <step.icon className="w-6 h-6 text-green-200" />
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{step.desc}</p>
+                  <h3 className="font-display text-xl font-semibold text-dark-body mb-2">{step.title}</h3>
+                  <p className="text-sm text-dark-muted leading-relaxed">{step.desc}</p>
                 </div>
               </AnimateOnScroll>
             ))}
@@ -192,11 +189,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="text-center mb-16">
-              <p className="text-emerald-600 text-sm font-semibold tracking-widest uppercase mb-2">Why Sri Anjaneya Realtor</p>
-              <h2 className="font-display text-3xl lg:text-5xl font-bold text-navy-900">
-                Safe Investment. <span className="text-gradient-gold">Lifetime Trust.</span>
+              <p className="text-light-label text-sm font-semibold tracking-widest uppercase mb-2">Why Sri Anjaneya Realtor</p>
+              <h2 className="font-display text-3xl lg:text-5xl font-bold text-slate-900">
+                Safe Investment. <span className="text-[#128C7E]">Lifetime Trust.</span>
               </h2>
-              <p className="text-slate-500 mt-3 max-w-2xl mx-auto">{settings.tagline} — serving families across Andhra Pradesh & Telangana.</p>
+              <p className="text-light-muted mt-3 max-w-2xl mx-auto">{settings.tagline} — serving families across Andhra Pradesh & Telangana.</p>
             </div>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -204,10 +201,10 @@ export default function HomePage() {
               <AnimateOnScroll key={s.title} delay={i * 100}>
                 <div className="text-center p-8 rounded-2xl border border-slate-100 card-hover group shine-hover h-full bg-gradient-to-b from-white to-slate-50/50">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-gold-500/10 group-hover:from-emerald-500/30 group-hover:to-gold-500/20 transition-all mb-5 group-hover:scale-110 group-hover:-rotate-3 duration-300">
-                    <s.icon className="w-7 h-7 text-emerald-600" />
+                    <s.icon className="w-7 h-7 text-[#128C7E]" />
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-navy-900 mb-3">{s.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{s.desc}</p>
+                  <h3 className="font-display text-lg font-semibold text-slate-900 mb-3">{s.title}</h3>
+                  <p className="text-light-body text-sm leading-relaxed">{s.desc}</p>
                 </div>
               </AnimateOnScroll>
             ))}
@@ -218,13 +215,13 @@ export default function HomePage() {
       {/* Highlights strip */}
       <section className="py-16 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-35 animate-gradient bg-gradient-to-r from-[#dcf8e8] via-[#25D366] to-[#128C7E]" />
-        <div className="max-w-7xl mx-auto px-4 relative">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {settings.highlights.map((h, i) => (
               <AnimateOnScroll key={h} delay={i * 80}>
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10 shine-hover">
-                  <span className="text-gold-400 text-lg shrink-0">✦</span>
-                  <p className="text-sm text-slate-200 leading-relaxed">{h}</p>
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-[#075E54]/50 border border-white/20 backdrop-blur-sm">
+                  <span className="text-dark-accent text-lg shrink-0">✦</span>
+                  <p className="text-sm text-dark-body leading-relaxed">{h}</p>
                 </div>
               </AnimateOnScroll>
             ))}
@@ -237,8 +234,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="text-center mb-16">
-              <p className="text-gold-600 text-sm font-semibold tracking-widest uppercase mb-2">Fresh Listings</p>
-              <h2 className="font-display text-3xl lg:text-5xl font-bold text-navy-900">Latest Properties</h2>
+              <p className="text-light-label text-sm font-semibold tracking-widest uppercase mb-2">Fresh Listings</p>
+              <h2 className="font-display text-3xl lg:text-5xl font-bold text-slate-900">Latest Properties</h2>
             </div>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -250,7 +247,7 @@ export default function HomePage() {
           </div>
           <AnimateOnScroll>
             <div className="text-center mt-14">
-              <Link to="/listings" className="inline-flex items-center gap-2 px-10 py-4 bg-navy-900 hover:bg-navy-800 text-white font-semibold rounded-xl transition-all hover:shadow-xl hover:scale-105 group shine-hover">
+              <Link to="/listings" className="inline-flex items-center gap-2 px-10 py-4 bg-[#075E54] hover:bg-[#128C7E] text-white font-semibold rounded-xl transition-all hover:shadow-xl hover:scale-105 group shine-hover">
                 Explore All Properties <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -263,8 +260,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
             <div className="text-center mb-16">
-              <p className="text-emerald-600 text-sm font-semibold tracking-widest uppercase mb-2">Happy Clients</p>
-              <h2 className="font-display text-3xl lg:text-5xl font-bold text-navy-900">Stories of Trust & Success</h2>
+              <p className="text-light-label text-sm font-semibold tracking-widest uppercase mb-2">Happy Clients</p>
+              <h2 className="font-display text-3xl lg:text-5xl font-bold text-slate-900">Stories of Trust & Success</h2>
             </div>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -272,12 +269,12 @@ export default function HomePage() {
               <AnimateOnScroll key={t.name} delay={i * 120} direction="up">
                 <div className="p-8 rounded-2xl bg-section-light border border-emerald-100/80 card-hover relative shine-hover h-full">
                   <div className="text-6xl text-emerald-500/20 font-display absolute top-4 right-6">"</div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6 relative">{t.text}</p>
+                  <p className="text-light-body text-sm leading-relaxed mb-6 relative">{t.text}</p>
                   <div className="flex items-center gap-3">
-                    <img src={t.image} alt="" className="w-11 h-11 rounded-full object-cover ring-2 ring-emerald-500/30" />
+                    <img src={t.image} alt="" className="w-11 h-11 rounded-full object-cover ring-2 ring-[#25D366]/40" />
                     <div>
-                      <p className="font-semibold text-navy-900 text-sm">{t.name}</p>
-                      <p className="text-xs text-emerald-600">{t.role}</p>
+                      <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
+                      <p className="text-xs text-[#128C7E]">{t.role}</p>
                     </div>
                   </div>
                 </div>
@@ -289,28 +286,35 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="relative py-28 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=1920&q=90" alt="" className="absolute inset-0 w-full h-full object-cover animate-ken-burns" />
-        <div className="absolute inset-0 bg-brand-overlay" />
-        <FloatingParticles />
+        <img
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=2400&q=95&auto=format&fit=crop"
+          alt=""
+          className="hero-bg-image absolute inset-0 w-full h-full"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-hero-scrim" />
         <AnimateOnScroll>
           <div className="relative max-w-3xl mx-auto px-4 text-center">
-            <p className="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-4">Don't Delay — Contact Us Today</p>
-            <h2 className="font-display text-3xl lg:text-5xl font-bold text-white mb-4">
-              {settings.ctaTitle || 'Achieve Your Dreams With Us'}
-            </h2>
-            <p className="text-slate-300 mb-10 leading-relaxed text-lg">
-              {settings.ctaSubtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full max-w-lg sm:max-w-none mx-auto">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="px-6 sm:px-10 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg shine-hover text-sm sm:text-base text-center">
-                WhatsApp: {settings.phone}
-              </a>
-              <Link to="/sellers" className="px-6 sm:px-10 py-4 bg-gold-500 hover:bg-gold-600 text-navy-950 font-semibold rounded-xl transition-all hover:scale-105 shine-hover text-sm sm:text-base text-center">
-                List Your Property
-              </Link>
-              <Link to="/contact" className="px-6 sm:px-10 py-4 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-xl transition-all hover:scale-105 text-sm sm:text-base text-center">
-                Contact Us
-              </Link>
+            <div className="hero-content-panel-center">
+              <p className="text-[#dcf8e8] text-sm font-semibold tracking-widest uppercase mb-4">Don't Delay — Contact Us Today</p>
+              <h2 className="font-display text-3xl lg:text-5xl font-bold text-white mb-4 hero-text-shadow">
+                {settings.ctaTitle || 'Achieve Your Dreams With Us'}
+              </h2>
+              <p className="text-white/95 mb-10 leading-relaxed text-lg">
+                {settings.ctaSubtitle}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full max-w-lg sm:max-w-none mx-auto">
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="px-6 sm:px-10 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg shine-hover text-sm sm:text-base text-center">
+                  WhatsApp: {settings.phone}
+                </a>
+                <Link to="/sellers" className="px-6 sm:px-10 py-4 bg-white text-[#075E54] font-semibold rounded-xl transition-all hover:scale-105 shine-hover text-sm sm:text-base text-center">
+                  List Your Property
+                </Link>
+                <Link to="/contact" className="px-6 sm:px-10 py-4 border border-white/40 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all hover:scale-105 text-sm sm:text-base text-center">
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </AnimateOnScroll>

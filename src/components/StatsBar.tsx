@@ -25,12 +25,12 @@ export default function StatsBar() {
             <AnimateOnScroll key={stat.label} delay={i * 100} direction="up">
               <div className="text-center group">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-500/30 mb-4 group-hover:scale-110 group-hover:bg-gold-500/30 transition-all duration-500">
-                  <stat.icon className="w-6 h-6 text-gold-400" />
+                  <stat.icon className="w-6 h-6 text-dark-accent" />
                 </div>
                 <p className="font-display text-3xl lg:text-4xl font-bold text-white mb-1">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="text-sm text-slate-400">{stat.label}</p>
+                <p className="text-sm text-dark-muted">{stat.label}</p>
               </div>
             </AnimateOnScroll>
           ))}

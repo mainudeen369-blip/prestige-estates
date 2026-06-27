@@ -27,7 +27,7 @@ export default function PropertyCard({ property, variant = 'default' }: Property
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         <div className="absolute top-4 left-4 flex gap-2">
-          <span className="px-3 py-1 bg-gold-500 text-navy-950 text-xs font-bold rounded-full">
+          <span className="px-3 py-1 bg-[#25D366] text-white text-xs font-bold rounded-full">
             {property.listingType}
           </span>
           <span className="px-3 py-1 bg-white/90 backdrop-blur text-navy-900 text-xs font-medium rounded-full">
@@ -35,7 +35,7 @@ export default function PropertyCard({ property, variant = 'default' }: Property
           </span>
         </div>
         {property.featured && (
-          <span className="absolute top-4 right-4 px-3 py-1 bg-navy-950/80 backdrop-blur text-gold-400 text-xs font-semibold rounded-full">
+          <span className="absolute top-4 right-4 px-3 py-1 bg-[#075E54]/90 backdrop-blur text-dark-accent text-xs font-semibold rounded-full">
             Featured
           </span>
         )}
@@ -47,34 +47,34 @@ export default function PropertyCard({ property, variant = 'default' }: Property
       </div>
 
       <div className={`p-5 lg:p-6 ${isFeatured ? 'lg:w-1/2 lg:flex lg:flex-col lg:justify-center' : ''}`}>
-        <h3 className="font-display text-lg font-semibold text-navy-900 group-hover:text-gold-600 transition-colors line-clamp-2 mb-2">
+        <h3 className="font-display text-lg font-semibold text-slate-900 group-hover:text-[#128C7E] transition-colors line-clamp-2 mb-2">
           {property.title}
         </h3>
-        <p className="flex items-center gap-1.5 text-sm text-slate-500 mb-4">
-          <MapPin className="w-4 h-4 text-gold-500 shrink-0" />
+        <p className="flex items-center gap-1.5 text-sm text-light-muted mb-4">
+          <MapPin className="w-4 h-4 text-[#128C7E] shrink-0" />
           {property.city}, {property.state}
         </p>
 
         {property.bedrooms > 0 && (
-          <div className="flex items-center gap-4 text-sm text-slate-600 mb-4">
+          <div className="flex items-center gap-4 text-sm text-light-body mb-4">
             <span className="flex items-center gap-1.5">
-              <Bed className="w-4 h-4 text-gold-500" />
+              <Bed className="w-4 h-4 text-[#128C7E]" />
               {property.bedrooms} Beds
             </span>
             <span className="flex items-center gap-1.5">
-              <Bath className="w-4 h-4 text-gold-500" />
+              <Bath className="w-4 h-4 text-[#128C7E]" />
               {property.bathrooms} Baths
             </span>
             <span className="flex items-center gap-1.5">
-              <Maximize className="w-4 h-4 text-gold-500" />
+              <Maximize className="w-4 h-4 text-[#128C7E]" />
               {formatArea(property.area, property.areaUnit)}
             </span>
           </div>
         )}
 
         {property.bedrooms === 0 && (
-          <div className="flex items-center gap-1.5 text-sm text-slate-600 mb-4">
-            <Maximize className="w-4 h-4 text-gold-500" />
+          <div className="flex items-center gap-1.5 text-sm text-light-body mb-4">
+            <Maximize className="w-4 h-4 text-[#128C7E]" />
             {formatArea(property.area, property.areaUnit)}
           </div>
         )}
@@ -82,12 +82,12 @@ export default function PropertyCard({ property, variant = 'default' }: Property
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap gap-1.5">
             {property.amenities.slice(0, 3).map((a) => (
-              <span key={a} className="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs rounded-md">
+              <span key={a} className="px-2 py-0.5 bg-slate-100 text-light-body text-xs rounded-md">
                 {a}
               </span>
             ))}
           </div>
-          <span className="flex items-center gap-1 text-sm font-medium text-gold-600 group-hover:gap-2 transition-all">
+          <span className="flex items-center gap-1 text-sm font-medium text-[#128C7E] group-hover:gap-2 transition-all">
             View <ArrowUpRight className="w-4 h-4" />
           </span>
         </div>

@@ -35,23 +35,23 @@ export default function Footer() {
 
           <div>
             <h4 className="text-slate-900 font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/buyers" className="hover:text-[#128C7E] transition-colors">For Buyers</Link></li>
-              <li><Link to="/sellers" className="hover:text-[#128C7E] transition-colors">For Sellers</Link></li>
-              <li><Link to="/listings" className="hover:text-[#128C7E] transition-colors">All Properties</Link></li>
-              <li><Link to="/agents" className="hover:text-[#128C7E] transition-colors">Agent Profiles</Link></li>
-              <li><Link to="/about" className="hover:text-[#128C7E] transition-colors">About Us</Link></li>
+            <ul className="space-y-2 text-sm text-slate-700">
+              <li><Link to="/buyers" className="hover:text-[#075E54] transition-colors">For Buyers</Link></li>
+              <li><Link to="/sellers" className="hover:text-[#075E54] transition-colors">For Sellers</Link></li>
+              <li><Link to="/listings" className="hover:text-[#075E54] transition-colors">All Properties</Link></li>
+              <li><Link to="/agents" className="hover:text-[#075E54] transition-colors">Agent Profiles</Link></li>
+              <li><Link to="/about" className="hover:text-[#075E54] transition-colors">About Us</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-slate-900 font-semibold mb-4">Property Types</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/listings?propertyType=Apartment" className="hover:text-[#128C7E] transition-colors">Apartments</Link></li>
-              <li><Link to="/listings?propertyType=Villa" className="hover:text-[#128C7E] transition-colors">Villas</Link></li>
-              <li><Link to="/listings?propertyType=Commercial" className="hover:text-[#128C7E] transition-colors">Commercial</Link></li>
-              <li><Link to="/listings?propertyType=Land" className="hover:text-[#128C7E] transition-colors">Land</Link></li>
-              <li><Link to="/listings?propertyType=Building" className="hover:text-[#128C7E] transition-colors">Buildings</Link></li>
+            <ul className="space-y-2 text-sm text-slate-700">
+              <li><Link to="/listings?propertyType=Apartment" className="hover:text-[#075E54] transition-colors">Apartments</Link></li>
+              <li><Link to="/listings?propertyType=Villa" className="hover:text-[#075E54] transition-colors">Villas</Link></li>
+              <li><Link to="/listings?propertyType=Commercial" className="hover:text-[#075E54] transition-colors">Commercial</Link></li>
+              <li><Link to="/listings?propertyType=Land" className="hover:text-[#075E54] transition-colors">Land</Link></li>
+              <li><Link to="/listings?propertyType=Building" className="hover:text-[#075E54] transition-colors">Buildings</Link></li>
             </ul>
           </div>
 
@@ -64,11 +64,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#128C7E] shrink-0" />
-                <a href={`tel:${settings.phone}`} className="hover:text-[#128C7E] transition-colors">{settings.phone}</a>
+                <a href={`tel:${settings.phone}`} className="text-slate-700 hover:text-[#075E54] transition-colors">{settings.phone}</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#128C7E] shrink-0" />
-                <a href={`mailto:${settings.email}`} className="hover:text-[#128C7E] transition-colors break-all">{settings.email}</a>
+                <a href={`mailto:${settings.email}`} className="text-slate-700 hover:text-[#075E54] transition-colors break-all">{settings.email}</a>
               </li>
             </ul>
           </div>

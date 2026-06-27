@@ -29,7 +29,7 @@ export const defaultSiteSettings: SiteSettings = {
   yearsExperience: 15,
   propertiesSold: 850,
   happyClients: 2100,
-  heroImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=90',
+  heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2400&q=95&auto=format&fit=crop',
   ctaTitle: 'Why Wait? Your Property Journey Starts Today',
   ctaSubtitle:
     'Whether you want to buy fertile land, sell your property, or invest in a developing area — call us now. Safe investment. Lifetime trust. Your dream, our commitment.',

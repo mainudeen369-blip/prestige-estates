@@ -103,7 +103,7 @@ export default function SellersMap({ properties, sellers }: SellersMapProps) {
               )}
               <div className="min-w-0">
                 <p className="font-medium text-navy-900 text-sm line-clamp-1">{item.title}</p>
-                <p className="text-gold-600 font-semibold text-xs mt-0.5">{item.price}</p>
+                <p className="text-[#128C7E] font-semibold text-xs mt-0.5">{item.price}</p>
                 <p className="text-xs text-slate-500 flex items-center gap-1 mt-1">
                   <MapPin className="w-3 h-3 shrink-0" />
                   <span className="line-clamp-1">{item.location}</span>

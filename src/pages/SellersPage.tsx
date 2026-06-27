@@ -23,11 +23,11 @@ export default function SellersPage() {
           <div className="absolute bottom-10 left-20 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl animate-float" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/25 text-dark-label rounded-full text-sm font-medium mb-4">
             <Tag className="w-4 h-4" /> For Sellers
           </div>
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4">Properties for Sale</h1>
-          <p className="text-slate-400 max-w-2xl mx-auto mb-6">
+          <h1 className="font-display text-4xl lg:text-5xl font-bold text-dark-body mb-4">Properties for Sale</h1>
+          <p className="text-dark-muted max-w-2xl mx-auto mb-6">
             Explore all listings from our registered sellers. View locations on the map and connect directly.
           </p>
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-colors">
@@ -59,15 +59,15 @@ export default function SellersPage() {
                 </div>
                 <div className="p-5 flex-1">
                   <div className="flex gap-2 mb-2">
-                    <span className="text-[10px] px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full font-medium">{p.propertyType}</span>
-                    <span className="text-[10px] px-2 py-0.5 bg-gold-100 text-gold-700 rounded-full font-medium">For Sale</span>
+                    <span className="text-[10px] px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full font-medium">{p.propertyType}</span>
+                    <span className="text-[10px] px-2 py-0.5 bg-[#ecfdf5] text-[#075E54] rounded-full font-medium">For Sale</span>
                   </div>
-                  <h3 className="font-semibold text-navy-900 line-clamp-2 group-hover:text-gold-600 transition-colors">{p.title}</h3>
-                  <p className="text-gold-600 font-bold mt-1">{formatPrice(p.price, p.currency)}</p>
-                  <p className="text-xs text-slate-500 flex items-center gap-1 mt-2">
+                  <h3 className="font-semibold text-slate-900 line-clamp-2 group-hover:text-[#128C7E] transition-colors">{p.title}</h3>
+                  <p className="text-[#128C7E] font-bold mt-1">{formatPrice(p.price, p.currency)}</p>
+                  <p className="text-xs text-light-muted flex items-center gap-1 mt-2">
                     <MapPin className="w-3 h-3" /> {p.city}, {p.state}
                   </p>
-                  <p className="text-xs text-slate-400 mt-1">Agent: {p.agentName}</p>
+                  <p className="text-xs text-light-muted mt-1">Agent: {p.agentName}</p>
                 </div>
               </Link>
             </AnimateOnScroll>
@@ -88,9 +88,9 @@ export default function SellersPage() {
                       s.status === 'Listed' ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'
                     }`}>{s.status}</span>
                     <h3 className="font-semibold text-navy-900 mt-2 line-clamp-1">{s.propertyTitle}</h3>
-                    <p className="text-sm text-slate-500">Seller: {s.name}</p>
-                    <p className="text-gold-600 font-bold mt-1">{formatPrice(s.askingPrice)}</p>
-                    <p className="text-xs text-slate-400 flex items-center gap-1 mt-2">
+                    <p className="text-sm text-light-body">Seller: {s.name}</p>
+                    <p className="text-[#128C7E] font-bold mt-1">{formatPrice(s.askingPrice)}</p>
+                    <p className="text-xs text-light-muted flex items-center gap-1 mt-2">
                       <MapPin className="w-3 h-3" /> {s.propertyAddress}, {s.city}
                     </p>
                     <a href={`tel:${s.phone}`} className="inline-flex items-center gap-1 text-xs text-navy-900 font-medium mt-3">

@@ -31,7 +31,7 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={`text-sm font-medium transition-colors hover:text-[#075E54] ${
-                  location.pathname === link.to ? 'text-[#128C7E] font-semibold' : 'text-slate-800'
+                  location.pathname === link.to ? 'text-[#075E54] font-semibold' : 'text-slate-800'
                 }`}
               >
                 {link.label}

@@ -131,7 +131,7 @@ export default function PropertyFiltersBar({ filters, onChange, resultCount }: P
         {hasFilters && (
           <button
             onClick={clearFilters}
-            className="flex items-center gap-1 text-sm text-gold-600 hover:text-gold-700"
+            className="flex items-center gap-1 text-sm text-[#128C7E] hover:text-[#075E54]"
           >
             <X className="w-4 h-4" /> Clear filters
           </button>

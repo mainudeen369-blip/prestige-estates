@@ -22,39 +22,42 @@ export default function SellPage() {
     <div className="bg-page-soft min-h-screen">
       <div className="relative h-[50vh] min-h-[400px]">
         <img
-          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=90"
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=2400&q=95&auto=format&fit=crop"
           alt="Sell your property"
-          className="w-full h-full object-cover"
+          className="hero-bg-image absolute inset-0 w-full h-full"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-brand-overlay" />
+        <div className="absolute inset-0 bg-hero-scrim" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4 max-w-2xl">
-            <p className="text-gold-400 text-sm font-semibold tracking-widest uppercase mb-3">For Sellers</p>
-            <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4">Sell or Rent Your Property</h1>
-            <p className="text-slate-300 text-lg">
-              Reach thousands of verified buyers and tenants. We make selling effortless.
-            </p>
+            <div className="hero-content-panel-center">
+              <p className="text-[#dcf8e8] text-sm font-semibold tracking-widest uppercase mb-3">For Sellers</p>
+              <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 hero-text-shadow">Sell or Rent Your Property</h1>
+              <p className="text-white/95 text-lg">
+                Reach thousands of verified buyers and tenants. We make selling effortless.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
-          <p className="text-gold-600 text-sm font-semibold tracking-widest uppercase mb-2">How It Works</p>
+          <p className="text-light-label text-sm font-semibold tracking-widest uppercase mb-2">How It Works</p>
           <h2 className="font-display text-3xl font-bold text-navy-900">Simple 4-Step Process</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {steps.map((step, i) => (
             <div key={step.title} className="relative text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gold-500/10 border border-gold-500/20 mb-5">
-                <step.icon className="w-7 h-7 text-gold-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#ecfdf5] border border-[#25D366]/20 mb-5">
+                <step.icon className="w-7 h-7 text-[#128C7E]" />
               </div>
               <span className="absolute top-0 right-1/2 translate-x-8 -translate-y-2 w-7 h-7 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center">
                 {i + 1}
               </span>
               <h3 className="font-display text-lg font-semibold text-navy-900 mb-2">{step.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+              <p className="text-light-body text-sm leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -71,8 +74,8 @@ export default function SellPage() {
                 'WhatsApp Business integration for instant buyer inquiries',
                 'Wide network of qualified buyers and investors',
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-slate-600">
-                  <span className="w-6 h-6 rounded-full bg-gold-500/20 text-gold-600 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                <li key={item} className="flex items-start gap-3 text-light-body">
+                  <span className="w-6 h-6 rounded-full bg-[#ecfdf5] text-[#128C7E] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
                   {item}
                 </li>
               ))}

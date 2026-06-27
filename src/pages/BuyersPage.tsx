@@ -27,11 +27,11 @@ export default function BuyersPage() {
           <div className="absolute top-10 right-20 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-float" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/25 text-dark-label rounded-full text-sm font-medium mb-4">
             <ShoppingBag className="w-4 h-4" /> For Buyers
           </div>
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4">Properties for Buyers</h1>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <h1 className="font-display text-4xl lg:text-5xl font-bold text-dark-body mb-4">Properties for Buyers</h1>
+          <p className="text-dark-muted max-w-2xl mx-auto">
             Browse vacant plots, agricultural land, houses, villas, and commercial properties across {settings.serviceAreas.join(' & ')}.
           </p>
         </div>
@@ -44,9 +44,9 @@ export default function BuyersPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {buyerProperties.length === 0 ? (
           <div className="text-center py-20 bg-white rounded-2xl border border-slate-200">
-            <Search className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-            <p className="text-slate-500">No properties match your search.</p>
-            <Link to="/contact" className="inline-flex items-center gap-2 mt-4 text-gold-600 font-medium">
+            <Search className="w-12 h-12 text-light-muted mx-auto mb-4" />
+            <p className="text-light-muted">No properties match your search.</p>
+            <Link to="/contact" className="inline-flex items-center gap-2 mt-4 text-[#128C7E] font-medium">
               Tell us your requirements <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

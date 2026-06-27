@@ -49,6 +49,74 @@
   background: linear-gradient(115deg, rgba(37, 211, 102, 0.72) 0%, rgba(18, 140, 126, 0.78) 50%, rgba(7, 94, 84, 0.82) 100%);
 }
 
+/* Hero image/video — sharp fullscreen cover without scale blur */
+.hero-bg-image,
+.hero-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hero-bg-video {
+  /* GPU layer for smoother HD playback */
+  will-change: transform;
+}
+
+.bg-hero-scrim {
+  background: linear-gradient(
+    to top,
+    rgba(7, 94, 84, 0.45) 0%,
+    rgba(7, 94, 84, 0.08) 30%,
+    transparent 55%
+  );
+}
+
+.hero-content-panel {
+  background: rgba(7, 94, 84, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.25rem;
+  padding: 1.25rem 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 640px) {
+  .hero-content-panel {
+    padding: 2rem 2.5rem;
+  }
+}
+
+.hero-content-panel-center {
+  background: rgba(7, 94, 84, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 640px) {
+  .hero-content-panel-center {
+    padding: 2.5rem 3rem;
+  }
+}
+
+.hero-text-shadow {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-accent {
+  color: #fef9c3;
+}
+
 .bg-brand-card {
   background: linear-gradient(145deg, #25D366 0%, #128C7E 55%, #075E54 100%);
 }
@@ -64,6 +132,17 @@
 .bg-brand-marquee {
   background: linear-gradient(90deg, #eefbf4 0%, #b8ebd0 50%, #eefbf4 100%);
 }
+
+/* Readable text — light backgrounds */
+.text-light-label { color: #075E54; }
+.text-light-body { color: #334155; }
+.text-light-muted { color: #475569; }
+
+/* Readable text — dark / WhatsApp green backgrounds */
+.text-dark-label { color: #dcfce7; }
+.text-dark-body { color: #ffffff; }
+.text-dark-muted { color: #f1f5f9; }
+.text-dark-accent { color: #fef9c3; }
 
 * {
   scroll-behavior: smooth;
@@ -312,10 +391,11 @@ body {
 
 @media (max-width: 639px) {
   .price-value.text-shimmer,
-  .price-value.text-gradient-gold {
+  .price-value.text-gradient-gold,
+  .price-value.text-dark-accent {
     background: none;
-    -webkit-text-fill-color: #d4af37;
-    color: #d4af37;
+    -webkit-text-fill-color: currentColor;
+    color: inherit;
     animation: none;
   }
 }

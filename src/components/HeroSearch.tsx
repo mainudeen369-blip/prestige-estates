@@ -27,7 +27,7 @@ export default function HeroSearch() {
   return (
     <form
       onSubmit={handleSearch}
-      className="w-full max-w-4xl mx-auto min-w-0 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 sm:p-6 border border-white/20"
+      className="w-full max-w-4xl mx-auto min-w-0 bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-slate-200"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 min-w-0">
         <div className="lg:col-span-2 relative min-w-0">
@@ -76,7 +76,7 @@ export default function HeroSearch() {
       </div>
       <button
         type="submit"
-        className="mt-4 w-full sm:w-auto px-8 py-3 bg-gold-500 hover:bg-gold-600 text-navy-950 font-semibold rounded-xl transition-colors text-sm"
+        className="mt-4 w-full sm:w-auto px-8 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-colors text-sm"
       >
         Search Properties
       </button>

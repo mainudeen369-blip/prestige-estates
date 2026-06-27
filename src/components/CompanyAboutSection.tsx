@@ -16,16 +16,16 @@ export default function CompanyAboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <p className="text-emerald-600 text-sm font-semibold tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
-              <span className="w-8 h-px bg-emerald-400 animate-line-grow" />
+            <p className="text-light-label text-sm font-semibold tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
+              <span className="w-8 h-px bg-[#25D366] animate-line-grow" />
               {settings.companyNameTelugu}
-              <span className="w-8 h-px bg-emerald-400 animate-line-grow" />
+              <span className="w-8 h-px bg-[#25D366] animate-line-grow" />
             </p>
-            <h2 className="font-display text-3xl lg:text-5xl font-bold text-navy-900 mb-4">
+            <h2 className="font-display text-3xl lg:text-5xl font-bold text-slate-900 mb-4">
               {settings.aboutTitle}
             </h2>
             {settings.aboutIntro && (
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed italic">
+              <p className="text-lg text-light-body max-w-3xl mx-auto leading-relaxed italic">
                 "{settings.aboutIntro}"
               </p>
             )}
@@ -36,15 +36,15 @@ export default function CompanyAboutSection() {
           <AnimateOnScroll direction="left">
             <div className="relative">
               <img src="/logo.png" alt="Sri Anjaneya Realtor" className="h-28 w-auto mb-6 rounded-2xl bg-white p-3 shadow-lg animate-bounce-subtle" />
-              <p className="text-slate-600 leading-relaxed mb-4">{settings.aboutContent}</p>
+              <p className="text-light-body leading-relaxed mb-4">{settings.aboutContent}</p>
               {settings.aboutStory && (
-                <p className="text-slate-500 leading-relaxed text-sm mb-6 border-l-4 border-gold-500 pl-4">
+                <p className="text-light-muted leading-relaxed text-sm mb-6 border-l-4 border-[#25D366] pl-4">
                   {settings.aboutStory}
                 </p>
               )}
               <div className="flex flex-wrap gap-2 mb-8">
                 {settings.serviceAreas.map((area) => (
-                  <span key={area} className="px-4 py-1.5 bg-navy-900 text-white text-sm font-medium rounded-full shine-hover">
+                  <span key={area} className="px-4 py-1.5 bg-[#075E54] text-white text-sm font-medium rounded-full shine-hover">
                     {area}
                   </span>
                 ))}
@@ -55,7 +55,7 @@ export default function CompanyAboutSection() {
                   {settings.trustPoints.map((tp) => (
                     <div key={tp.title} className="p-4 rounded-xl bg-white border border-slate-100 card-hover shine-hover">
                       <p className="font-semibold text-navy-900 text-sm mb-1">{tp.title}</p>
-                      <p className="text-xs text-slate-500 leading-relaxed">{tp.desc}</p>
+                      <p className="text-xs text-light-muted leading-relaxed">{tp.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -76,13 +76,13 @@ export default function CompanyAboutSection() {
                   return (
                     <div key={cat.title} className="p-5 rounded-2xl bg-white border border-slate-100 card-hover shine-hover group">
                       <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                        <Icon className="w-5 h-5 text-emerald-600" />
+                        <Icon className="w-5 h-5 text-[#128C7E]" />
                       </div>
                       <h4 className="font-semibold text-navy-900 text-sm mb-2">{cat.title}</h4>
                       <ul className="space-y-1">
                         {cat.items.map((item) => (
-                          <li key={item} className="text-xs text-slate-500 flex items-start gap-1.5">
-                            <span className="text-gold-500 mt-0.5">✦</span>{item}
+                          <li key={item} className="text-xs text-light-muted flex items-start gap-1.5">
+                            <span className="text-[#25D366] mt-0.5">✦</span>{item}
                           </li>
                         ))}
                       </ul>
@@ -94,28 +94,28 @@ export default function CompanyAboutSection() {
               <div className="p-6 rounded-2xl bg-brand-card text-white relative overflow-hidden shine-hover">
                 <div className="absolute inset-0 bg-gradient-to-br from-gold-500/10 to-emerald-500/10 animate-gradient" />
                 <div className="relative">
-                  <h4 className="font-display text-lg font-semibold text-gold-400 mb-4">Affordable Starting Prices</h4>
+                  <h4 className="font-display text-lg font-semibold text-dark-accent mb-4">Affordable Starting Prices</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {settings.startingPrices.map((p) => (
-                      <div key={p.category} className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors min-w-0">
-                        <p className="text-xs text-slate-400 leading-snug">{p.category}</p>
-                        <p className="font-bold text-gold-400 text-base sm:text-lg price-value">{p.price}</p>
-                        <p className="text-[10px] sm:text-xs text-slate-500 leading-snug">{p.unit}</p>
+                      <div key={p.category} className="p-3 sm:p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-colors min-w-0">
+                        <p className="text-xs text-dark-muted leading-snug">{p.category}</p>
+                        <p className="font-bold text-dark-accent text-base sm:text-lg price-value">{p.price}</p>
+                        <p className="text-[10px] sm:text-xs text-dark-label leading-snug">{p.unit}</p>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4 p-4 rounded-xl bg-emerald-50 border border-emerald-100">
-                <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-navy-900 font-semibold hover:text-emerald-700 transition-colors">
-                  <Phone className="w-4 h-4 text-emerald-600" /> {settings.phone}
+              <div className="flex flex-wrap gap-4 p-4 rounded-xl bg-[#ecfdf5] border border-[#25D366]/20">
+                <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-slate-900 font-semibold hover:text-[#128C7E] transition-colors">
+                  <Phone className="w-4 h-4 text-[#128C7E]" /> {settings.phone}
                 </a>
-                <a href={`mailto:${settings.email}`} className="flex items-center gap-2 text-sm text-navy-900 font-medium hover:text-emerald-700 break-all">
-                  <Mail className="w-4 h-4 text-emerald-600" /> {settings.email}
+                <a href={`mailto:${settings.email}`} className="flex items-center gap-2 text-sm text-slate-800 font-medium hover:text-[#128C7E] break-all">
+                  <Mail className="w-4 h-4 text-[#128C7E]" /> {settings.email}
                 </a>
-                <span className="flex items-center gap-2 text-sm text-slate-600">
-                  <MapPin className="w-4 h-4 text-emerald-600" /> Serving AP & Telangana
+                <span className="flex items-center gap-2 text-sm text-light-body">
+                  <MapPin className="w-4 h-4 text-[#128C7E]" /> Serving AP & Telangana
                 </span>
               </div>
             </div>

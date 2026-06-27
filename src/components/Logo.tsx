@@ -26,7 +26,7 @@ export default function Logo({ variant = 'light', showText = true, className = '
       {showText && (
         <div className="min-w-0">
           <span className={`font-display font-semibold tracking-tight block leading-tight ${
-            isLight ? 'text-white text-base sm:text-lg' : 'text-navy-900 text-base'
+            isLight ? 'text-white text-base sm:text-lg' : 'text-slate-900 text-base'
           }`}>
             Sri Anjaneya
           </span>

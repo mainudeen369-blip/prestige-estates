@@ -24,9 +24,9 @@ export default function ContactPage() {
     <div className="bg-page-soft min-h-screen overflow-x-clip w-full">
       <div className="bg-brand-hero py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gold-400 text-sm font-semibold tracking-widest uppercase mb-2">Get in Touch</p>
-          <h1 className="font-display text-4xl font-bold text-white">Contact Us</h1>
-          <p className="text-slate-400 mt-3 max-w-xl mx-auto">
+          <p className="text-dark-label text-sm font-semibold tracking-widest uppercase mb-2">Get in Touch</p>
+          <h1 className="font-display text-4xl font-bold text-dark-body">Contact Us</h1>
+          <p className="text-dark-muted mt-3 max-w-xl mx-auto">
             Have a question or want to schedule a viewing? We'd love to hear from you.
           </p>
         </div>
@@ -36,23 +36,23 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="space-y-6">
             <div className="bg-white rounded-2xl border border-slate-100 p-6">
-              <Phone className="w-6 h-6 text-gold-500 mb-3" />
-              <h3 className="font-semibold text-navy-900 mb-1">Phone</h3>
-              <a href={`tel:${settings.phone}`} className="text-slate-600 hover:text-gold-600 transition-colors">
+              <Phone className="w-6 h-6 text-[#128C7E] mb-3" />
+              <h3 className="font-semibold text-slate-900 mb-1">Phone</h3>
+              <a href={`tel:${settings.phone}`} className="text-light-body hover:text-[#128C7E] transition-colors">
                 {settings.phone}
               </a>
             </div>
             <div className="bg-white rounded-2xl border border-slate-100 p-6">
-              <Mail className="w-6 h-6 text-gold-500 mb-3" />
-              <h3 className="font-semibold text-navy-900 mb-1">Email</h3>
-              <a href={`mailto:${settings.email}`} className="text-slate-600 hover:text-gold-600 transition-colors">
+              <Mail className="w-6 h-6 text-[#128C7E] mb-3" />
+              <h3 className="font-semibold text-slate-900 mb-1">Email</h3>
+              <a href={`mailto:${settings.email}`} className="text-light-body hover:text-[#128C7E] transition-colors">
                 {settings.email}
               </a>
             </div>
             <div className="bg-white rounded-2xl border border-slate-100 p-6">
-              <MapPin className="w-6 h-6 text-gold-500 mb-3" />
-              <h3 className="font-semibold text-navy-900 mb-1">Office</h3>
-              <p className="text-slate-600 text-sm">{settings.address}</p>
+              <MapPin className="w-6 h-6 text-[#128C7E] mb-3" />
+              <h3 className="font-semibold text-slate-900 mb-1">Office</h3>
+              <p className="text-light-body text-sm">{settings.address}</p>
             </div>
             <a
               href={whatsappLink}
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 <p className="text-slate-600 mb-6">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="text-gold-600 font-medium hover:text-gold-700"
+                  className="text-[#128C7E] font-medium hover:text-[#075E54]"
                 >
                   Send another message
                 </button>

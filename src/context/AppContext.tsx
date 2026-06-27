@@ -77,10 +77,17 @@ function loadData(): AppData {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored) {
       const parsed = JSON.parse(stored)
+      const settings = { ...defaults.settings, ...parsed.settings }
+      if (
+        settings.heroImage?.includes('photo-1560518883-ce09059eeffa') ||
+        settings.heroImage?.includes('photo-1500382017468-9049fed747aa')
+      ) {
+        settings.heroImage = defaults.settings.heroImage
+      }
       return {
         ...defaults,
         ...parsed,
-        settings: { ...defaults.settings, ...parsed.settings },
+        settings,
       }
     }
     const legacy = localStorage.getItem('prestige-estates-data')
