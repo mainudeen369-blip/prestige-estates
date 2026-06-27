@@ -15,34 +15,34 @@
   --color-brand-teal: #0f766e;
 }
 
-/* Dual-color brand backgrounds */
+/* Dual-color brand backgrounds — dark tones for readable white/gold text */
 .bg-brand-header {
-  background: linear-gradient(110deg, #047857 0%, #0f2942 48%, #4338ca 100%);
+  background: linear-gradient(105deg, #052e16 0%, #0a0f1a 42%, #1e1b4b 100%);
 }
 
 .bg-brand-footer {
-  background: linear-gradient(165deg, #3730a3 0%, #0f2942 42%, #064e3b 100%);
+  background: linear-gradient(165deg, #1e1b4b 0%, #0a0f1a 45%, #052e16 100%);
 }
 
 .bg-page-soft {
-  background: linear-gradient(180deg, #ecfdf5 0%, #f8fafc 48%, #fffbeb 100%);
+  background: linear-gradient(180deg, #f1f5f9 0%, #f8fafc 50%, #eef2ff 100%);
   background-attachment: fixed;
 }
 
 .bg-brand-hero {
-  background: linear-gradient(125deg, #059669 0%, #0f2942 52%, #4f46e5 100%);
+  background: linear-gradient(125deg, #064e3b 0%, #0a0f1a 55%, #312e81 100%);
 }
 
 .bg-brand-dark {
-  background: linear-gradient(135deg, #064e3b 0%, #0f172a 52%, #312e81 100%);
+  background: linear-gradient(135deg, #052e16 0%, #0a0f1a 50%, #1e1b4b 100%);
 }
 
 .bg-brand-overlay {
-  background: linear-gradient(115deg, rgba(4, 120, 87, 0.93) 0%, rgba(15, 41, 66, 0.9) 50%, rgba(67, 56, 202, 0.78) 100%);
+  background: linear-gradient(115deg, rgba(5, 46, 22, 0.94) 0%, rgba(10, 15, 26, 0.92) 50%, rgba(30, 27, 75, 0.88) 100%);
 }
 
 .bg-brand-card {
-  background: linear-gradient(145deg, #065f46 0%, #0f172a 65%, #1e1b4b 100%);
+  background: linear-gradient(145deg, #064e3b 0%, #0a0f1a 60%, #1e1b4b 100%);
 }
 
 .bg-section-light {
@@ -54,7 +54,7 @@
 }
 
 .bg-brand-marquee {
-  background: linear-gradient(90deg, #064e3b 0%, #1e1b4b 50%, #064e3b 100%);
+  background: linear-gradient(90deg, #052e16 0%, #0a0f1a 50%, #1e1b4b 100%);
 }
 
 * {

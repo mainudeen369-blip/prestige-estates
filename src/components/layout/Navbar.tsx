@@ -20,7 +20,7 @@ export default function Navbar() {
   const { settings } = useApp()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header/95 backdrop-blur-md border-b border-gold-500/20 shadow-lg shadow-emerald-950/20 overflow-x-clip w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header border-b border-white/10 shadow-lg shadow-black/30 overflow-x-clip w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Logo variant="light" />
@@ -31,7 +31,7 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={`text-sm font-medium transition-colors hover:text-gold-400 ${
-                  location.pathname === link.to ? 'text-gold-400' : 'text-slate-300'
+                  location.pathname === link.to ? 'text-gold-400 font-semibold' : 'text-white/90'
                 }`}
               >
                 {link.label}
@@ -40,7 +40,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors">
+            <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-white/90 hover:text-gold-400 transition-colors">
               <Phone className="w-4 h-4 text-gold-400" />
               {settings.phone}
             </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-brand-header border-t border-gold-500/15">
+        <div className="lg:hidden bg-brand-dark border-t border-white/10">
           <nav className="flex flex-col px-4 py-4 gap-1">
             {navLinks.map((link) => (
               <Link
@@ -72,8 +72,8 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className={`px-4 py-3 rounded-lg text-sm font-medium ${
                   location.pathname === link.to
-                    ? 'bg-gold-500/20 text-gold-400'
-                    : 'text-slate-300 hover:bg-white/5'
+                    ? 'bg-gold-500/25 text-gold-400 font-semibold'
+                    : 'text-white/90 hover:bg-white/10'
                 }`}
               >
                 {link.label}
