@@ -20,18 +20,18 @@ export default function Navbar() {
   const { settings } = useApp()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header border-b border-gold-400/20 shadow-lg shadow-black/25 overflow-x-clip w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header border-b border-amber-600/20 shadow-md shadow-amber-900/10 overflow-x-clip w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Logo variant="light" />
+          <Logo variant="dark" />
 
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors hover:text-amber-200 ${
-                  location.pathname === link.to ? 'text-amber-200 font-semibold' : 'text-white'
+                className={`text-sm font-medium transition-colors hover:text-amber-800 ${
+                  location.pathname === link.to ? 'text-amber-900 font-semibold' : 'text-stone-800'
                 }`}
               >
                 {link.label}
@@ -40,13 +40,13 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-white hover:text-amber-200 transition-colors">
-              <Phone className="w-4 h-4 text-gold-400" />
+            <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-stone-800 hover:text-amber-900 transition-colors">
+              <Phone className="w-4 h-4 text-amber-700" />
               {settings.phone}
             </a>
             <Link
               to="/listings"
-              className="px-5 py-2.5 bg-amber-200 hover:bg-amber-100 text-stone-900 text-sm font-semibold rounded-lg transition-colors shadow-sm"
+              className="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-amber-100 text-sm font-semibold rounded-lg transition-colors shadow-sm"
             >
               Browse Properties
             </Link>
@@ -54,7 +54,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden p-2 text-stone-900"
             aria-label="Toggle menu"
           >
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -63,7 +63,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-brand-dark border-t border-gold-400/15">
+        <div className="lg:hidden bg-brand-hero border-t border-amber-600/15">
           <nav className="flex flex-col px-4 py-4 gap-1">
             {navLinks.map((link) => (
               <Link
@@ -72,8 +72,8 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className={`px-4 py-3 rounded-lg text-sm font-medium ${
                   location.pathname === link.to
-                    ? 'bg-amber-200/20 text-amber-200 font-semibold'
-                    : 'text-white hover:bg-white/10'
+                    ? 'bg-white/40 text-amber-950 font-semibold'
+                    : 'text-stone-900 hover:bg-white/25'
                 }`}
               >
                 {link.label}
@@ -82,7 +82,7 @@ export default function Navbar() {
             <Link
               to="/listings"
               onClick={() => setOpen(false)}
-              className="mt-2 px-4 py-3 bg-amber-200 text-stone-900 text-sm font-semibold rounded-lg text-center"
+              className="mt-2 px-4 py-3 bg-stone-900 text-amber-100 text-sm font-semibold rounded-lg text-center"
             >
               Browse Properties
             </Link>
