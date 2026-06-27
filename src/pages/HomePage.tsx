@@ -8,6 +8,7 @@ import StatsBar from '../components/StatsBar'
 import PropertyMarquee from '../components/PropertyMarquee'
 import CompanyAboutSection from '../components/CompanyAboutSection'
 import AnimateOnScroll from '../components/AnimateOnScroll'
+import SafeImage from '../components/SafeImage'
 import { filterProperties, getWhatsAppLink } from '../utils/helpers'
 
 export default function HomePage() {
@@ -49,7 +50,6 @@ export default function HomePage() {
         <div className="absolute inset-0 overflow-hidden">
           <HeroBackground
             imageSrc={settings.heroImage}
-            imageAlt="Sri Anjaneya Realtor property"
           />
         </div>
 
@@ -271,7 +271,16 @@ export default function HomePage() {
                   <div className="text-6xl text-emerald-500/20 font-display absolute top-4 right-6">"</div>
                   <p className="text-light-body text-sm leading-relaxed mb-6 relative">{t.text}</p>
                   <div className="flex items-center gap-3">
-                    <img src={t.image} alt="" className="w-11 h-11 rounded-full object-cover ring-2 ring-[#25D366]/40" />
+                    <SafeImage
+                      src={t.image}
+                      alt=""
+                      className="w-11 h-11 rounded-full object-cover ring-2 ring-[#25D366]/40"
+                      fallback={
+                        <div className="w-11 h-11 rounded-full bg-[#ecfdf5] flex items-center justify-center ring-2 ring-[#25D366]/40 text-sm font-bold text-[#128C7E]">
+                          {t.name[0]}
+                        </div>
+                      }
+                    />
                     <div>
                       <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
                       <p className="text-xs text-[#128C7E]">{t.role}</p>
@@ -286,14 +295,9 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="relative py-28 overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=2400&q=95&auto=format&fit=crop"
-          alt=""
-          className="hero-bg-image absolute inset-0 w-full h-full"
-          loading="lazy"
-          decoding="async"
-        />
-        <div className="absolute inset-0 bg-hero-scrim" />
+        <div className="absolute inset-0 overflow-hidden">
+          <HeroBackground imageSrc={settings.heroImage} />
+        </div>
         <AnimateOnScroll>
           <div className="relative max-w-3xl mx-auto px-4 text-center">
             <div className="hero-content-panel-center">

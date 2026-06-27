@@ -3,7 +3,14 @@ import { Tag, MapPin, Phone, MessageCircle } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import SellersMap from '../components/SellersMap'
 import AnimateOnScroll from '../components/AnimateOnScroll'
+import SafeImage from '../components/SafeImage'
 import { formatPrice, getWhatsAppLink } from '../utils/helpers'
+
+const imageFallback = (
+  <div className="w-full h-full min-h-[140px] bg-gradient-to-br from-[#e8f3ee] to-[#eef0f6] flex items-center justify-center">
+    <MapPin className="w-8 h-8 text-[#128C7E]/30" />
+  </div>
+)
 
 export default function SellersPage() {
   const { properties, sellers, settings } = useApp()
@@ -55,7 +62,7 @@ export default function SellersPage() {
             <AnimateOnScroll key={p.id} delay={i * 80}>
               <Link to={`/property/${p.slug}`} className="flex bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover group">
                 <div className="w-40 sm:w-48 shrink-0">
-                  <img src={p.images[0]} alt={p.title} className="w-full h-full object-cover min-h-[140px] group-hover:scale-105 transition-transform duration-500" />
+                  <SafeImage src={p.images[0]} alt={p.title} className="w-full h-full object-cover min-h-[140px] group-hover:scale-105 transition-transform duration-500" fallback={imageFallback} />
                 </div>
                 <div className="p-5 flex-1">
                   <div className="flex gap-2 mb-2">
@@ -81,7 +88,7 @@ export default function SellersPage() {
               {activeSellers.map((s) => (
                 <div key={s.id} className="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover">
                   <div className="aspect-[16/10] overflow-hidden">
-                    <img src={s.images[0]} alt={s.propertyTitle} className="w-full h-full object-cover" />
+                    <SafeImage src={s.images[0]} alt={s.propertyTitle} className="w-full h-full object-cover" fallback={imageFallback} />
                   </div>
                   <div className="p-5">
                     <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${

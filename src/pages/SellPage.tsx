@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Upload, TrendingUp, Users, FileCheck, ArrowRight } from 'lucide-react'
 import { useApp } from '../context/AppContext'
+import HeroBackground from '../components/HeroBackground'
 import { getWhatsAppLink } from '../utils/helpers'
 
 export default function SellPage() {
@@ -20,14 +21,10 @@ export default function SellPage() {
 
   return (
     <div className="bg-page-soft min-h-screen">
-      <div className="relative h-[50vh] min-h-[400px]">
-        <img
-          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=2400&q=95&auto=format&fit=crop"
-          alt="Sell your property"
-          className="hero-bg-image absolute inset-0 w-full h-full"
-          decoding="async"
-        />
-        <div className="absolute inset-0 bg-hero-scrim" />
+      <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <div className="absolute inset-0">
+          <HeroBackground imageSrc={settings.heroImage} />
+        </div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4 max-w-2xl">
             <div className="hero-content-panel-center">

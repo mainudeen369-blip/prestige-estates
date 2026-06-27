@@ -3,6 +3,7 @@ import { MapPin } from 'lucide-react'
 import type { Property } from '../types'
 import type { Seller } from '../types/crm'
 import { formatPrice, getLocationString } from '../utils/helpers'
+import SafeImage from './SafeImage'
 
 interface MapItem {
   id: string
@@ -99,7 +100,12 @@ export default function SellersMap({ properties, sellers }: SellersMapProps) {
           >
             <div className="flex gap-3">
               {item.image && (
-                <img src={item.image} alt="" className="w-14 h-14 rounded-lg object-cover shrink-0" />
+                <SafeImage
+                  src={item.image}
+                  alt=""
+                  className="w-14 h-14 rounded-lg object-cover shrink-0"
+                  fallback={<div className="w-14 h-14 rounded-lg bg-[#ecfdf5] shrink-0" />}
+                />
               )}
               <div className="min-w-0">
                 <p className="font-medium text-navy-900 text-sm line-clamp-1">{item.title}</p>

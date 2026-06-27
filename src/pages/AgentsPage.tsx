@@ -1,6 +1,7 @@
 import { Phone, Mail, Building2, Award, MessageCircle } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import AnimateOnScroll from '../components/AnimateOnScroll'
+import SafeImage from '../components/SafeImage'
 import { getWhatsAppLink } from '../utils/helpers'
 
 export default function AgentsPage() {
@@ -41,7 +42,16 @@ export default function AgentsPage() {
                 <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover">
                   <div className="relative">
                     <div className="aspect-[4/3] overflow-hidden">
-                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                      <SafeImage
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        fallback={
+                          <div className="w-full h-full bg-gradient-to-br from-[#e8f3ee] to-[#eef0f6] flex items-center justify-center min-h-[200px]">
+                            <span className="text-5xl font-display font-bold text-[#128C7E]/35">{member.name[0]}</span>
+                          </div>
+                        }
+                      />
                     </div>
                     <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#075E54]/95 to-transparent p-5 pt-16">
                       <h2 className="font-display text-xl font-bold text-white">{member.name}</h2>

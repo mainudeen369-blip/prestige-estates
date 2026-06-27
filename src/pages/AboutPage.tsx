@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import { Target, Eye, Quote, Check, Building2, Phone, Mail, Sparkles } from 'lucide-react'
 import AnimateOnScroll from '../components/AnimateOnScroll'
+import HeroBackground from '../components/HeroBackground'
+import SafeImage from '../components/SafeImage'
 import { getWhatsAppLink } from '../utils/helpers'
 
 export default function AboutPage() {
@@ -12,16 +14,16 @@ export default function AboutPage() {
     <div className="bg-page-soft min-h-screen overflow-x-clip w-full">
       {/* Hero */}
       <div className="relative min-h-[55vh] flex items-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=2400&q=95&auto=format&fit=crop"
-          alt="About"
-          className="hero-bg-image absolute inset-0 w-full h-full"
-          decoding="async"
-        />
-        <div className="absolute inset-0 bg-hero-scrim" />
+        <div className="absolute inset-0 overflow-hidden">
+          <HeroBackground imageSrc={settings.heroImage} imageAlt="" />
+        </div>
         <div className="relative max-w-4xl mx-auto px-4 text-center py-20">
           <div className="hero-content-panel-center">
-            <img src="/logo.png" alt="Sri Anjaneya Realtor" className="h-32 w-auto mx-auto mb-6 rounded-2xl bg-white p-3 shadow-xl animate-bounce-subtle" />
+            <SafeImage
+              src="/logo.png"
+              alt="Sri Anjaneya Realtor"
+              className="h-32 w-auto mx-auto mb-6 rounded-2xl bg-white p-3 shadow-xl animate-bounce-subtle"
+            />
             {settings.companyNameTelugu && (
               <p className="text-[#dcf8e8] text-xl mb-2 animate-fade-up">{settings.companyNameTelugu}</p>
             )}
@@ -73,15 +75,14 @@ export default function AboutPage() {
             </div>
           </AnimateOnScroll>
           <AnimateOnScroll direction="right">
-            <div className="relative overflow-hidden rounded-2xl">
-              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=800&q=90" alt="Land" className="w-full rounded-2xl shadow-2xl" />
-              <div className="absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 bg-[#075E54] text-white p-4 sm:p-6 rounded-2xl shadow-xl max-w-[calc(100%-2rem)] sm:max-w-[240px] shine-hover">
-                <Quote className="w-6 h-6 mb-2 opacity-70" />
-                <p className="text-sm font-semibold leading-relaxed">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#e8f3ee] via-[#eef0f6] to-[#f3ebf0] min-h-[320px] flex items-center justify-center p-8 shadow-lg border border-slate-100">
+              <div className="text-center max-w-sm">
+                <Quote className="w-10 h-10 text-[#128C7E] mx-auto mb-4 opacity-80" />
+                <p className="text-slate-800 font-semibold leading-relaxed text-lg">
                   "Safe investment with lifetime trust — achieve your dreams with Sri Anjaneya Realtor."
                 </p>
               </div>
-              <div className="absolute top-4 right-4 sm:-top-4 sm:-right-4 bg-[#25D366] text-white p-3 sm:p-4 rounded-2xl shadow-lg animate-bounce-subtle">
+              <div className="absolute top-4 right-4 bg-[#128C7E] text-white p-3 sm:p-4 rounded-2xl shadow-lg animate-bounce-subtle">
                 <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
             </div>
@@ -234,7 +235,16 @@ export default function AboutPage() {
               <AnimateOnScroll key={member.id} delay={i * 100}>
                 <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden group card-hover shine-hover">
                   <div className="aspect-[3/4] overflow-hidden relative">
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <SafeImage
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      fallback={
+                        <div className="w-full h-full bg-gradient-to-br from-[#e8f3ee] to-[#eef0f6] flex items-center justify-center">
+                          <span className="text-4xl font-display font-bold text-[#128C7E]/40">{member.name[0]}</span>
+                        </div>
+                      }
+                    />
                     <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-3 py-1.5 bg-[#075E54]/90 backdrop-blur rounded-full text-white text-xs">
                       <Building2 className="w-3 h-3 text-[#25D366]" />
                       {member.propertiesSold} properties sold

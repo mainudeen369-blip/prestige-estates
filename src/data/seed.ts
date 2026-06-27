@@ -28,7 +28,7 @@ export const seedProperties: Property[] = [
     furnishing: 'N/A',
     facing: 'East',
     amenities: ['HMDA Approved', 'Clear Title', 'Near ORR', 'Developing Area'],
-    images: ['https://images.unsplash.com/photo-1500382017468-9049fed747aa?w=1200&q=90', 'https://images.unsplash.com/photo-1464822759844-d150baec0131?w=1200&q=90'],
+    images: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=90', 'https://images.unsplash.com/photo-1464822759844-d150baec0131?w=1200&q=90'],
     featured: true,
     agentName: 'Priya Reddy',
     agentPhone: '+91 93903 91534',

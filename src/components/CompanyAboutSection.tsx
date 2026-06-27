@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, MapPin, Phone, Mail, Sparkles, Leaf, Building, Landmark } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import AnimateOnScroll from './AnimateOnScroll'
+import SafeImage from './SafeImage'
 
 const categoryIcons = [Leaf, Building, Landmark, Sparkles]
 
@@ -35,7 +36,7 @@ export default function CompanyAboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <AnimateOnScroll direction="left">
             <div className="relative">
-              <img src="/logo.png" alt="Sri Anjaneya Realtor" className="h-28 w-auto mb-6 rounded-2xl bg-white p-3 shadow-lg animate-bounce-subtle" />
+              <SafeImage src="/logo.png" alt="Sri Anjaneya Realtor" className="h-28 w-auto mb-6 rounded-2xl bg-white p-3 shadow-lg animate-bounce-subtle" />
               <p className="text-light-body leading-relaxed mb-4">{settings.aboutContent}</p>
               {settings.aboutStory && (
                 <p className="text-light-muted leading-relaxed text-sm mb-6 border-l-4 border-[#25D366] pl-4">

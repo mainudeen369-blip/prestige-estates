@@ -5,6 +5,7 @@ import {
 } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import ImageGallery from '../components/ImageGallery'
+import SafeImage from '../components/SafeImage'
 import { formatPrice, formatArea, getLocationString, getWhatsAppLink, getPropertyWhatsAppMessage } from '../utils/helpers'
 
 export default function PropertyDetailPage() {
@@ -181,7 +182,12 @@ export default function PropertyDetailPage() {
               {related.map((p) => (
                 <Link key={p.id} to={`/property/${p.slug}`} className="group block rounded-2xl overflow-hidden border border-slate-100 hover:shadow-lg transition-all">
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img src={p.images[0]} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <SafeImage
+                      src={p.images[0]}
+                      alt={p.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fallback={<div className="w-full h-full bg-gradient-to-br from-[#e8f3ee] to-[#eef0f6] min-h-[120px]" />}
+                    />
                   </div>
                   <div className="p-4 bg-white">
                     <p className="font-semibold text-navy-900 line-clamp-1">{p.title}</p>

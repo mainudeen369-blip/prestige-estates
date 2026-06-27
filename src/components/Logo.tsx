@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SafeImage from './SafeImage'
 
 interface LogoProps {
   variant?: 'light' | 'dark' | 'admin'
@@ -17,7 +18,7 @@ export default function Logo({ variant = 'light', showText = true, className = '
           isLight ? 'bg-white p-1 shadow-sm border border-white/20' : 'bg-white p-1.5 shadow-md'
         } ${variant === 'admin' ? 'p-1' : ''}`}
       >
-        <img
+        <SafeImage
           src="/logo.png"
           alt="Sri Anjaneya Realtor"
           className={`object-contain ${variant === 'admin' ? 'h-9 w-auto' : 'h-10 sm:h-11 w-auto'}`}

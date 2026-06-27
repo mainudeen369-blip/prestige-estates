@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Bed, Bath, Maximize, MapPin, ArrowUpRight } from 'lucide-react'
+import { Bed, Bath, Maximize, MapPin, ArrowUpRight, Home } from 'lucide-react'
 import type { Property } from '../types'
 import { formatPrice, formatArea } from '../utils/helpers'
+import SafeImage from './SafeImage'
 
 interface PropertyCardProps {
   property: Property
@@ -19,11 +20,16 @@ export default function PropertyCard({ property, variant = 'default' }: Property
       }`}
     >
       <div className={`relative overflow-hidden ${isFeatured ? 'lg:w-1/2 aspect-[4/3] lg:aspect-auto lg:min-h-[320px]' : 'aspect-[4/3]'}`}>
-        <img
+        <SafeImage
           src={property.images[0]}
           alt={property.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           loading="lazy"
+          fallback={
+            <div className="w-full h-full bg-gradient-to-br from-[#e8f3ee] to-[#eef0f6] flex items-center justify-center">
+              <Home className="w-12 h-12 text-[#128C7E]/35" />
+            </div>
+          }
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         <div className="absolute top-4 left-4 flex gap-2">

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import SafeImage from './SafeImage'
 
 const HERO_VIDEO_CANDIDATES = [
   '/hero/video/Bg-hd.mp4',
@@ -47,10 +48,10 @@ async function findHeroVideo(): Promise<string | null> {
 
 interface HeroBackgroundProps {
   imageSrc: string
-  imageAlt: string
+  imageAlt?: string
 }
 
-export default function HeroBackground({ imageSrc, imageAlt }: HeroBackgroundProps) {
+export default function HeroBackground({ imageSrc }: HeroBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [videoSrc, setVideoSrc] = useState<string | null>(null)
   const [videoReady, setVideoReady] = useState(false)
@@ -74,14 +75,15 @@ export default function HeroBackground({ imageSrc, imageAlt }: HeroBackgroundPro
 
   return (
     <>
-      <img
+      <SafeImage
         src={imageSrc}
-        alt={imageAlt}
+        alt=""
         className={`hero-bg-image transition-opacity duration-700 ${
           showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
         fetchPriority="high"
         decoding="async"
+        fallback={<div className="hero-bg-image bg-brand-hero" aria-hidden />}
       />
       {videoSrc && (
         <video

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight, X, Expand } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X, Expand, Home } from 'lucide-react'
+import SafeImage from './SafeImage'
 
 interface ImageGalleryProps {
   images: string[]
@@ -25,10 +26,15 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
     <>
       <div className="relative rounded-2xl overflow-hidden bg-brand-card">
         <div className="aspect-[16/9] relative">
-          <img
+          <SafeImage
             src={images[current]}
             alt={`${title} - ${current + 1}`}
             className="w-full h-full object-cover"
+            fallback={
+              <div className="w-full h-full bg-gradient-to-br from-[#e8f3ee] to-[#eef0f6] flex items-center justify-center">
+                <Home className="w-16 h-16 text-[#128C7E]/30" />
+              </div>
+            }
           />
           <button
             onClick={() => setLightbox(true)}
@@ -69,7 +75,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                   i === current ? 'border-gold-500' : 'border-transparent opacity-70 hover:opacity-100'
                 }`}
               >
-                <img src={img} alt="" className="w-full h-full object-cover" />
+                <SafeImage src={img} alt="" className="w-full h-full object-cover" fallback={<div className="w-full h-full bg-slate-200" />} />
               </button>
             ))}
           </div>
@@ -85,7 +91,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
           >
             <X className="w-8 h-8" />
           </button>
-          <img
+          <SafeImage
             src={images[current]}
             alt={title}
             className="max-w-[90vw] max-h-[85vh] object-contain"
