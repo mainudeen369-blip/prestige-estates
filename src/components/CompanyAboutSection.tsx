@@ -10,16 +10,16 @@ export default function CompanyAboutSection() {
 
   return (
     <section className="py-28 bg-section-cream relative overflow-hidden">
-      <div className="absolute top-20 right-0 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-emerald-500/5 rounded-full blur-3xl animate-float pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-gold-500/8 rounded-full blur-3xl animate-float-delay pointer-events-none" />
+      <div className="absolute top-20 right-0 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-[#128C7E]/6 rounded-full blur-3xl animate-float pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-[#b88496]/8 rounded-full blur-3xl animate-float-delay pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <AnimateOnScroll>
           <div className="text-center mb-16">
             <p className="text-light-label text-sm font-semibold tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
-              <span className="w-8 h-px bg-[#25D366] animate-line-grow" />
+              <span className="w-8 h-px bg-gradient-to-r from-[#128C7E] to-[#b88496] animate-line-grow" />
               {settings.companyNameTelugu}
-              <span className="w-8 h-px bg-[#25D366] animate-line-grow" />
+              <span className="w-8 h-px bg-gradient-to-r from-[#b88496] to-[#128C7E] animate-line-grow" />
             </p>
             <h2 className="font-display text-3xl lg:text-5xl font-bold text-slate-900 mb-4">
               {settings.aboutTitle}

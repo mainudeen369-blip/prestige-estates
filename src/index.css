@@ -21,28 +21,63 @@
   --color-wa-dark: #075E54;
   --color-wa-soft: #e8f8ef;
   --color-wa-chat: #ece5dd;
+  --color-ig-plum: #6b5b7a;
+  --color-ig-rose: #b88496;
+  --color-ig-blush: #f5eef2;
+  --color-mix-slate: #4a6278;
 }
 
-/* Soft WhatsApp green dual-color backgrounds */
+/* Soft WhatsApp green + muted Instagram lavender/blush — not too bright */
 .bg-brand-header {
-  background: linear-gradient(110deg, #f0fdf6 0%, #dcf8e8 32%, #c5eed9 62%, #a8e6c3 100%);
+  background: linear-gradient(
+    110deg,
+    #f2faf6 0%,
+    #edf6f1 24%,
+    #eef2f8 50%,
+    #f7f0f4 76%,
+    #ecf5f0 100%
+  );
 }
 
 .bg-brand-footer {
-  background: linear-gradient(165deg, #e8f8ef 0%, #d4f4e2 45%, #c8f0dc 100%);
+  background: linear-gradient(
+    165deg,
+    #eff7f2 0%,
+    #edf2f7 42%,
+    #f5eef2 72%,
+    #eaf3ef 100%
+  );
 }
 
 .bg-page-soft {
-  background: linear-gradient(180deg, #f5f9f7 0%, #eef6f2 48%, #ece5dd 100%);
+  background: linear-gradient(
+    180deg,
+    #f5f8f6 0%,
+    #f1f4f8 38%,
+    #f7f3f5 72%,
+    #eeefeb 100%
+  );
   background-attachment: fixed;
 }
 
 .bg-brand-hero {
-  background: linear-gradient(125deg, #25D366 0%, #20bd5a 42%, #128C7E 100%);
+  background: linear-gradient(
+    125deg,
+    #1a8f78 0%,
+    #1a8478 32%,
+    #2a7088 62%,
+    #5a5588 100%
+  );
 }
 
 .bg-brand-dark {
-  background: linear-gradient(135deg, #128C7E 0%, #0f9b6e 50%, #075E54 100%);
+  background: linear-gradient(
+    135deg,
+    #075e54 0%,
+    #0f6f68 38%,
+    #1a5f72 68%,
+    #3d4a6e 100%
+  );
 }
 
 .bg-brand-overlay {
@@ -75,18 +110,25 @@
 .bg-hero-scrim {
   background: linear-gradient(
     to top,
-    rgba(7, 94, 84, 0.45) 0%,
-    rgba(7, 94, 84, 0.08) 30%,
-    transparent 55%
+    rgba(7, 94, 84, 0.36) 0%,
+    rgba(45, 88, 100, 0.14) 24%,
+    rgba(120, 88, 108, 0.07) 40%,
+    transparent 58%
   );
 }
 
 .hero-content-panel {
-  background: rgba(7, 94, 84, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(
+    145deg,
+    rgba(7, 94, 84, 0.91) 0%,
+    rgba(24, 102, 96, 0.89) 38%,
+    rgba(45, 82, 108, 0.87) 72%,
+    rgba(82, 62, 98, 0.85) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 1.25rem;
   padding: 1.25rem 1.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px rgba(30, 50, 60, 0.22);
 }
 
 @media (min-width: 640px) {
@@ -96,11 +138,17 @@
 }
 
 .hero-content-panel-center {
-  background: rgba(7, 94, 84, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(
+    145deg,
+    rgba(7, 94, 84, 0.91) 0%,
+    rgba(24, 102, 96, 0.89) 38%,
+    rgba(45, 82, 108, 0.87) 72%,
+    rgba(82, 62, 98, 0.85) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 1.25rem;
   padding: 2rem 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px rgba(30, 50, 60, 0.22);
 }
 
 @media (min-width: 640px) {
@@ -114,23 +162,36 @@
 }
 
 .hero-accent {
-  color: #fef9c3;
+  color: #f5e8ee;
 }
 
 .bg-brand-card {
-  background: linear-gradient(145deg, #25D366 0%, #128C7E 55%, #075E54 100%);
+  background: linear-gradient(
+    145deg,
+    #128c7e 0%,
+    #1a7888 38%,
+    #2d6580 68%,
+    #524878 100%
+  );
 }
 
 .bg-section-light {
-  background: linear-gradient(180deg, #ffffff 0%, #eefbf4 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f6f3 55%, #f3f0f6 100%);
 }
 
 .bg-section-cream {
-  background: linear-gradient(180deg, #dcf8e8 0%, #ffffff 55%, #f5f9f7 100%);
+  background: linear-gradient(180deg, #e8f3ee 0%, #f3eef3 40%, #ffffff 58%, #f2f6f4 100%);
 }
 
 .bg-brand-marquee {
-  background: linear-gradient(90deg, #eefbf4 0%, #b8ebd0 50%, #eefbf4 100%);
+  background: linear-gradient(
+    90deg,
+    #eef5f1 0%,
+    #e9eff5 28%,
+    #f2ebf0 50%,
+    #e9eff5 72%,
+    #eef5f1 100%
+  );
 }
 
 /* Readable text — light backgrounds */
@@ -142,7 +203,7 @@
 .text-dark-label { color: #dcfce7; }
 .text-dark-body { color: #ffffff; }
 .text-dark-muted { color: #f1f5f9; }
-.text-dark-accent { color: #fef9c3; }
+.text-dark-accent { color: #f5ece8; }
 
 * {
   scroll-behavior: smooth;

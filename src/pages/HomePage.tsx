@@ -61,7 +61,7 @@ export default function HomePage() {
               </p>
             )}
             {settings.companyNameTelugu && (
-              <p className="text-[#dcf8e8] text-base font-medium mb-3 animate-fade-up">{settings.companyNameTelugu}</p>
+              <p className="text-[#e8f4ef] text-base font-medium mb-3 animate-fade-up">{settings.companyNameTelugu}</p>
             )}
             <h1 className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 animate-fade-up break-words hero-text-shadow">
               {settings.heroTitle.split(' ').slice(0, -2).join(' ')}{' '}
@@ -89,7 +89,7 @@ export default function HomePage() {
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/30 max-w-full text-center">
               <Phone className="w-4 h-4 shrink-0" /> Call / WhatsApp: {settings.phone}
             </a>
-            <Link to="/buyers" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#075E54]/90 hover:bg-[#075E54] border border-white/20 text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 shadow-lg">
+            <Link to="/buyers" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#1a5f72]/90 hover:bg-[#1a5f72] border border-white/20 text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 shadow-lg">
               Browse Properties <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -102,7 +102,7 @@ export default function HomePage() {
 
       {/* Starting prices banner */}
       <section className="py-12 bg-brand-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#dcf8e8]/40 via-[#25D366]/15 to-[#128C7E]/20 animate-gradient" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#e8f3ee]/50 via-[#eef0f6]/40 to-[#f3ebf0]/45 animate-gradient" />
         <div className="max-w-7xl mx-auto px-4 relative">
           <AnimateOnScroll>
             <p className="text-center text-dark-label text-sm font-semibold tracking-widest uppercase mb-6">Affordable Properties — Starting From</p>
@@ -154,7 +154,7 @@ export default function HomePage() {
       {/* Process */}
       <section className="py-24 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-emerald-500/15 rounded-full blur-3xl animate-float" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#6b5b7a]/12 rounded-full blur-3xl animate-float" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <AnimateOnScroll>
@@ -214,7 +214,7 @@ export default function HomePage() {
 
       {/* Highlights strip */}
       <section className="py-16 bg-brand-dark relative overflow-hidden">
-        <div className="absolute inset-0 opacity-35 animate-gradient bg-gradient-to-r from-[#dcf8e8] via-[#25D366] to-[#128C7E]" />
+        <div className="absolute inset-0 opacity-30 animate-gradient bg-gradient-to-r from-[#075E54] via-[#2a7088] to-[#5a5588]" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {settings.highlights.map((h, i) => (
@@ -297,7 +297,7 @@ export default function HomePage() {
         <AnimateOnScroll>
           <div className="relative max-w-3xl mx-auto px-4 text-center">
             <div className="hero-content-panel-center">
-              <p className="text-[#dcf8e8] text-sm font-semibold tracking-widest uppercase mb-4">Don't Delay — Contact Us Today</p>
+              <p className="text-[#e8f4ef] text-sm font-semibold tracking-widest uppercase mb-4">Don't Delay — Contact Us Today</p>
               <h2 className="font-display text-3xl lg:text-5xl font-bold text-white mb-4 hero-text-shadow">
                 {settings.ctaTitle || 'Achieve Your Dreams With Us'}
               </h2>

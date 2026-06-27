@@ -20,7 +20,7 @@ export default function Navbar() {
   const { settings } = useApp()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header border-b border-[#25D366]/25 shadow-md shadow-[#075E54]/10 overflow-x-clip w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header border-b border-[#8aa8a0]/25 shadow-md shadow-[#4a6278]/8 overflow-x-clip w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Logo variant="dark" />
