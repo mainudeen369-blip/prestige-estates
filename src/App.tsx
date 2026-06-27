@@ -6,7 +6,9 @@ import ListingsPage from './pages/ListingsPage'
 import PropertyDetailPage from './pages/PropertyDetailPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
-import SellPage from './pages/SellPage'
+import BuyersPage from './pages/BuyersPage'
+import SellersPage from './pages/SellersPage'
+import AgentsPage from './pages/AgentsPage'
 import AdminLoginPage from './admin/AdminLoginPage'
 import AdminLayout from './admin/AdminLayout'
 import AdminGuard from './admin/AdminGuard'
@@ -26,11 +28,14 @@ export default function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
+            <Route path="buyers" element={<BuyersPage />} />
+            <Route path="sellers" element={<SellersPage />} />
+            <Route path="agents" element={<AgentsPage />} />
             <Route path="listings" element={<ListingsPage />} />
             <Route path="property/:slug" element={<PropertyDetailPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
-            <Route path="sell" element={<SellPage />} />
+            <Route path="sell" element={<SellersPage />} />
           </Route>
 
           <Route path="admin" element={<AdminLoginPage />} />

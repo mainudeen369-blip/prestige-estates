@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Save, RotateCcw } from 'lucide-react'
 import { useApp } from '../context/AppContext'
-import { defaultSiteSettings } from '../data/seed'
+import { defaultSiteSettings } from '../data/company'
 
 export default function AdminSettingsPage() {
   const { settings, updateSettings, resetToSeed } = useApp()

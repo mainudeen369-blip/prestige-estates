@@ -5,6 +5,7 @@ import HeroSearch from '../components/HeroSearch'
 import PropertyCard from '../components/PropertyCard'
 import StatsBar from '../components/StatsBar'
 import PropertyMarquee from '../components/PropertyMarquee'
+import CompanyAboutSection from '../components/CompanyAboutSection'
 import AnimateOnScroll from '../components/AnimateOnScroll'
 import { filterProperties } from '../utils/helpers'
 
@@ -49,7 +50,8 @@ export default function HomePage() {
               {settings.tagline}
             </p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-              Find Your <span className="text-gradient-gold">Dream</span> Property
+              {settings.heroTitle.split(' ').slice(0, 3).join(' ')}{' '}
+              <span className="text-gradient-gold">{settings.heroTitle.split(' ').slice(3).join(' ') || 'Property'}</span>
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed max-w-xl">{settings.heroSubtitle}</p>
           </div>
@@ -61,6 +63,8 @@ export default function HomePage() {
 
       <PropertyMarquee />
       <StatsBar />
+
+      <CompanyAboutSection />
 
       {/* Featured */}
       <section className="py-24 bg-slate-50">

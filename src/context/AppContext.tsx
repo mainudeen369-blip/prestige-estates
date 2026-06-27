@@ -72,18 +72,26 @@ function defaultData(): AppData {
 }
 
 function loadData(): AppData {
+  const defaults = defaultData()
   try {
     const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored) return JSON.parse(stored)
+    if (stored) {
+      const parsed = JSON.parse(stored)
+      return {
+        ...defaults,
+        ...parsed,
+        settings: { ...defaults.settings, ...parsed.settings },
+      }
+    }
     const legacy = localStorage.getItem('prestige-estates-data')
     if (legacy) {
       const parsed = JSON.parse(legacy)
-      return { ...defaultData(), ...parsed, buyers: seedBuyers, sellers: seedSellers, deals: seedDeals }
+      return { ...defaults, ...parsed, settings: { ...defaults.settings, ...parsed.settings } }
     }
   } catch {
     /* use defaults */
   }
-  return defaultData()
+  return defaults
 }
 
 function saveData(data: AppData) {

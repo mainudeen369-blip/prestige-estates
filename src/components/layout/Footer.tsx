@@ -42,10 +42,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
+              <li><Link to="/buyers" className="hover:text-gold-400 transition-colors">For Buyers</Link></li>
+              <li><Link to="/sellers" className="hover:text-gold-400 transition-colors">For Sellers</Link></li>
               <li><Link to="/listings" className="hover:text-gold-400 transition-colors">All Properties</Link></li>
-              <li><Link to="/listings?type=For+Sale" className="hover:text-gold-400 transition-colors">For Sale</Link></li>
-              <li><Link to="/listings?type=For+Rent" className="hover:text-gold-400 transition-colors">For Rent</Link></li>
-              <li><Link to="/sell" className="hover:text-gold-400 transition-colors">Sell With Us</Link></li>
+              <li><Link to="/agents" className="hover:text-gold-400 transition-colors">Agent Profiles</Link></li>
               <li><Link to="/about" className="hover:text-gold-400 transition-colors">About Us</Link></li>
             </ul>
           </div>

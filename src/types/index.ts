@@ -70,15 +70,31 @@ export interface TeamMember {
   role: string
   bio: string
   image: string
+  phone?: string
+  propertiesSold: number
+}
+
+export interface ServiceCategory {
+  title: string
+  items: string[]
+}
+
+export interface StartingPrice {
+  category: string
+  price: string
+  unit: string
 }
 
 export interface SiteSettings {
   companyName: string
+  companyNameTelugu?: string
   tagline: string
+  taglineTelugu?: string
   phone: string
   email: string
   whatsappNumber: string
   address: string
+  serviceAreas: string[]
   aboutTitle: string
   aboutContent: string
   mission: string
@@ -89,6 +105,9 @@ export interface SiteSettings {
   heroImage: string
   heroTitle: string
   heroSubtitle: string
+  serviceCategories: ServiceCategory[]
+  startingPrices: StartingPrice[]
+  highlights: string[]
   facebook?: string
   instagram?: string
   linkedin?: string

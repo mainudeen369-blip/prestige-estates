@@ -5,8 +5,10 @@ import { useApp } from '../../context/AppContext'
 
 const navLinks = [
   { to: '/', label: 'Home' },
+  { to: '/buyers', label: 'Buyers' },
+  { to: '/sellers', label: 'Sellers' },
   { to: '/listings', label: 'Properties' },
-  { to: '/sell', label: 'Sell With Us' },
+  { to: '/agents', label: 'Agents' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]
