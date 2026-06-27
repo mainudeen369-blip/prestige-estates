@@ -72,10 +72,14 @@ export default function HomePage() {
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
               {settings.heroSubtitle}
             </p>
-            <div className="flex flex-wrap gap-3 mt-8 stagger-fade">
+            <div className="flex flex-wrap gap-2.5 sm:gap-3 mt-8 stagger-fade">
               {settings.highlights.slice(0, 3).map((h) => (
-                <span key={h} className="px-3 py-1.5 bg-white/10 backdrop-blur border border-white/15 text-slate-200 text-xs rounded-full">
-                  ✦ {h.split('—')[0].split('-')[0].trim().slice(0, 40)}{(h.length > 40 ? '…' : '')}
+                <span
+                  key={h}
+                  className="inline-flex items-start gap-1.5 px-3 py-2 bg-white/10 backdrop-blur border border-white/15 text-slate-200 text-xs sm:text-sm rounded-2xl leading-relaxed whitespace-normal max-w-full"
+                >
+                  <span className="shrink-0 mt-0.5">✦</span>
+                  <span>{h}</span>
                 </span>
               ))}
             </div>

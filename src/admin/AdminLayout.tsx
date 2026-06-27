@@ -89,7 +89,7 @@ export default function AdminLayout() {
             Preview Site →
           </Link>
         </header>
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-auto">
+        <main data-admin-scroll className="flex-1 p-4 sm:p-6 lg:p-8 overflow-auto">
           <Outlet />
         </main>
       </div>
