@@ -140,7 +140,7 @@ export default function AboutPage() {
         {/* Starting prices */}
         <AnimateOnScroll>
           <div className="bg-brand-dark rounded-3xl p-6 sm:p-10 mb-24 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/30 to-gold-900/20 animate-gradient" />
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-900/35 to-stone-900/25 animate-gradient" />
             <div className="relative min-w-0">
               <h2 className="font-display text-2xl sm:text-3xl font-bold mb-2 text-center">Affordable Starting Prices</h2>
               <p className="text-slate-400 text-center mb-6 sm:mb-8 text-sm">Quality properties that respect your budget</p>

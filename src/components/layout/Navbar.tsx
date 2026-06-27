@@ -20,7 +20,7 @@ export default function Navbar() {
   const { settings } = useApp()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header border-b border-white/10 shadow-lg shadow-black/30 overflow-x-clip w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header border-b border-gold-400/20 shadow-lg shadow-black/25 overflow-x-clip w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Logo variant="light" />
@@ -30,8 +30,8 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors hover:text-gold-400 ${
-                  location.pathname === link.to ? 'text-gold-400 font-semibold' : 'text-white/90'
+                className={`text-sm font-medium transition-colors hover:text-amber-200 ${
+                  location.pathname === link.to ? 'text-amber-200 font-semibold' : 'text-white'
                 }`}
               >
                 {link.label}
@@ -40,13 +40,13 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-white/90 hover:text-gold-400 transition-colors">
+            <a href={`tel:${settings.phone}`} className="flex items-center gap-2 text-sm text-white hover:text-amber-200 transition-colors">
               <Phone className="w-4 h-4 text-gold-400" />
               {settings.phone}
             </a>
             <Link
               to="/listings"
-              className="px-5 py-2.5 bg-gold-500 hover:bg-gold-600 text-navy-950 text-sm font-semibold rounded-lg transition-colors"
+              className="px-5 py-2.5 bg-amber-200 hover:bg-amber-100 text-stone-900 text-sm font-semibold rounded-lg transition-colors shadow-sm"
             >
               Browse Properties
             </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-brand-dark border-t border-white/10">
+        <div className="lg:hidden bg-brand-dark border-t border-gold-400/15">
           <nav className="flex flex-col px-4 py-4 gap-1">
             {navLinks.map((link) => (
               <Link
@@ -72,8 +72,8 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className={`px-4 py-3 rounded-lg text-sm font-medium ${
                   location.pathname === link.to
-                    ? 'bg-gold-500/25 text-gold-400 font-semibold'
-                    : 'text-white/90 hover:bg-white/10'
+                    ? 'bg-amber-200/20 text-amber-200 font-semibold'
+                    : 'text-white hover:bg-white/10'
                 }`}
               >
                 {link.label}
@@ -82,7 +82,7 @@ export default function Navbar() {
             <Link
               to="/listings"
               onClick={() => setOpen(false)}
-              className="mt-2 px-4 py-3 bg-gold-500 text-navy-950 text-sm font-semibold rounded-lg text-center"
+              className="mt-2 px-4 py-3 bg-amber-200 text-stone-900 text-sm font-semibold rounded-lg text-center"
             >
               Browse Properties
             </Link>

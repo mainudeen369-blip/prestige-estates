@@ -7,7 +7,7 @@ export default function PropertyMarquee() {
     <div className="bg-brand-marquee py-4 overflow-hidden border-y border-gold-500/10">
       <div className="flex animate-marquee whitespace-nowrap">
         {items.map((type, i) => (
-          <span key={i} className="mx-8 text-sm font-medium text-slate-400 flex items-center gap-3">
+          <span key={i} className="mx-8 text-sm font-medium text-amber-200/70 flex items-center gap-3">
             <span className="w-1.5 h-1.5 rounded-full bg-gold-500" />
             {type}
           </span>
