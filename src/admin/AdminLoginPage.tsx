@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Lock, User, Home } from 'lucide-react'
+import { Lock, User } from 'lucide-react'
 import { useApp } from '../context/AppContext'
+import Logo from '../components/Logo'
 
 export default function AdminLoginPage() {
   const { login, isAdmin } = useApp()
@@ -35,11 +36,11 @@ export default function AdminLoginPage() {
 
       <div className="relative w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-500/30 mb-4">
-            <Home className="w-7 h-7 text-gold-400" />
+          <div className="flex justify-center mb-4">
+            <Logo variant="admin" showText={true} linkTo="/" className="flex-col !gap-2 [&_img]:h-20" />
           </div>
-          <h1 className="font-display text-2xl font-bold text-white">Admin Panel</h1>
-          <p className="text-slate-400 text-sm mt-1">Sign in to manage your properties</p>
+          <h1 className="font-display text-xl font-bold text-white">Admin Panel</h1>
+          <p className="text-slate-400 text-sm mt-1">Sign in to manage Sri Anjaneya Realtor</p>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8">

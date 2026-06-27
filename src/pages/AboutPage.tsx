@@ -13,6 +13,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-navy-950/70" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
+            <img src="/logo.png" alt="Sri Anjaneya Realtor" className="h-28 w-auto mx-auto mb-6 rounded-2xl bg-white p-3 shadow-lg" />
             {settings.companyNameTelugu && (
               <p className="text-gold-400 text-xl mb-2">{settings.companyNameTelugu}</p>
             )}

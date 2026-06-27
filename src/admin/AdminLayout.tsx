@@ -1,10 +1,11 @@
 import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import {
-  LayoutDashboard, Building2, Settings, MessageSquare, LogOut, Home, Menu, X,
+  LayoutDashboard, Building2, Settings, MessageSquare, LogOut, Menu, X, ExternalLink,
   Users, UserCheck, Handshake,
 } from 'lucide-react'
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
+import Logo from '../components/Logo'
 
 const sidebarLinks = [
   { to: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -17,7 +18,7 @@ const sidebarLinks = [
 ]
 
 export default function AdminLayout() {
-  const { logout, settings } = useApp()
+  const { logout } = useApp()
   const navigate = useNavigate()
   const location = useLocation()
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -35,15 +36,8 @@ export default function AdminLayout() {
 
       <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-navy-950 text-white transform transition-transform lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-6 border-b border-white/10">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-gold-500/20 flex items-center justify-center border border-gold-500/30">
-              <Home className="w-4 h-4 text-gold-400" />
-            </div>
-            <div>
-              <p className="font-display font-semibold text-sm">{settings.companyName}</p>
-              <p className="text-[10px] text-gold-400/70 uppercase tracking-wider">Admin Panel</p>
-            </div>
-          </Link>
+          <Logo variant="admin" linkTo="/" />
+          <p className="text-[10px] text-gold-400/70 uppercase tracking-wider mt-2 pl-1">Admin Panel</p>
         </div>
 
         <nav className="p-4 space-y-1">
@@ -70,7 +64,7 @@ export default function AdminLayout() {
             target="_blank"
             className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-400 hover:bg-white/5 hover:text-white transition-colors mb-1"
           >
-            <Home className="w-5 h-5" />
+            <ExternalLink className="w-5 h-5" />
             View Website
           </Link>
           <button

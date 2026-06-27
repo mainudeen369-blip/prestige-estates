@@ -13,6 +13,7 @@ export default function CompanyAboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <AnimateOnScroll direction="left">
             <div>
+              <img src="/logo.png" alt="Sri Anjaneya Realtor" className="h-24 w-auto mb-6 rounded-xl bg-white p-2 shadow-sm" />
               {settings.companyNameTelugu && (
                 <p className="text-gold-600 text-lg font-medium mb-2">{settings.companyNameTelugu}</p>
               )}
