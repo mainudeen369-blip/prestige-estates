@@ -1,12 +1,15 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import { AppProvider } from './context/AppContext'
 import Layout from './components/layout/Layout'
 import HomePage from './pages/HomePage'
+import ListingsPage from './pages/ListingsPage'
+import PropertyDetailPage from './pages/PropertyDetailPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import BuyersPage from './pages/BuyersPage'
 import SellersPage from './pages/SellersPage'
+import AgentsPage from './pages/AgentsPage'
 import AdminLoginPage from './admin/AdminLoginPage'
 import AdminLayout from './admin/AdminLayout'
 import AdminGuard from './admin/AdminGuard'
@@ -29,12 +32,12 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="buyers" element={<BuyersPage />} />
             <Route path="sellers" element={<SellersPage />} />
+            <Route path="agents" element={<AgentsPage />} />
+            <Route path="listings" element={<ListingsPage />} />
+            <Route path="property/:slug" element={<PropertyDetailPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="sell" element={<SellersPage />} />
-            <Route path="listings" element={<Navigate to="/buyers" replace />} />
-            <Route path="agents" element={<Navigate to="/about" replace />} />
-            <Route path="property/:slug" element={<Navigate to="/contact" replace />} />
           </Route>
 
           <Route path="admin" element={<AdminLoginPage />} />
