@@ -8,8 +8,6 @@ const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/buyers', label: 'Buyers' },
   { to: '/sellers', label: 'Sellers' },
-  { to: '/listings', label: 'Properties' },
-  { to: '/agents', label: 'Agents' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -45,10 +43,10 @@ export default function Navbar() {
               {settings.phone}
             </a>
             <Link
-              to="/listings"
+              to="/contact"
               className="px-5 py-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-semibold rounded-lg transition-colors shadow-sm"
             >
-              Browse Properties
+              Contact Us
             </Link>
           </div>
 
@@ -80,11 +78,11 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              to="/listings"
+              to="/contact"
               onClick={() => setOpen(false)}
               className="mt-2 px-4 py-3 bg-white text-[#128C7E] text-sm font-semibold rounded-lg text-center"
             >
-              Browse Properties
+              Contact Us
             </Link>
           </nav>
         </div>

@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
-import { Target, Eye, Quote, Check, Building2, Phone, Mail, Sparkles } from 'lucide-react'
+import { Target, Eye, Quote, Check, Sparkles, Phone, Mail } from 'lucide-react'
 import AnimateOnScroll from '../components/AnimateOnScroll'
 import HeroBackground from '../components/HeroBackground'
 import SafeImage from '../components/SafeImage'
@@ -220,46 +219,6 @@ export default function AboutPage() {
             </div>
           </div>
         </AnimateOnScroll>
-
-        {/* Team */}
-        <div>
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <p className="text-light-label text-sm font-semibold tracking-widest uppercase mb-2">Our Team</p>
-              <h2 className="font-display text-3xl font-bold text-slate-900">Expert Agents</h2>
-            </div>
-            <Link to="/agents" className="text-[#128C7E] font-medium hover:text-[#075E54]">View all profiles →</Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {settings.team.map((member, i) => (
-              <AnimateOnScroll key={member.id} delay={i * 100}>
-                <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden group card-hover shine-hover">
-                  <div className="aspect-[3/4] overflow-hidden relative">
-                    <SafeImage
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      fallback={
-                        <div className="w-full h-full bg-gradient-to-br from-[#e8f3ee] to-[#eef0f6] flex items-center justify-center">
-                          <span className="text-4xl font-display font-bold text-[#128C7E]/40">{member.name[0]}</span>
-                        </div>
-                      }
-                    />
-                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-3 py-1.5 bg-[#075E54]/90 backdrop-blur rounded-full text-white text-xs">
-                      <Building2 className="w-3 h-3 text-[#25D366]" />
-                      {member.propertiesSold} properties sold
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-lg font-semibold text-slate-900">{member.name}</h3>
-                    <p className="text-[#128C7E] text-sm font-medium mb-2">{member.role}</p>
-                    <p className="text-light-muted text-sm leading-relaxed">{member.bio}</p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   )

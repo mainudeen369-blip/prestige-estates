@@ -1,22 +1,18 @@
 import { Link } from 'react-router-dom'
-import { Tag, MapPin, Phone, MessageCircle } from 'lucide-react'
+import { Tag, Phone, MessageCircle, Check, ArrowRight } from 'lucide-react'
 import { useApp } from '../context/AppContext'
-import SellersMap from '../components/SellersMap'
 import AnimateOnScroll from '../components/AnimateOnScroll'
-import SafeImage from '../components/SafeImage'
-import { formatPrice, getWhatsAppLink } from '../utils/helpers'
+import { getWhatsAppLink } from '../utils/helpers'
 
-const imageFallback = (
-  <div className="w-full h-full min-h-[140px] bg-gradient-to-br from-[#e8f3ee] to-[#eef0f6] flex items-center justify-center">
-    <MapPin className="w-8 h-8 text-[#128C7E]/30" />
-  </div>
-)
+const sellPoints = [
+  'Wide network of genuine buyers across AP & Telangana',
+  'Fair valuation and transparent negotiation',
+  'Complete documentation and registration support',
+  'Dedicated follow-up until the deal closes',
+]
 
 export default function SellersPage() {
-  const { properties, sellers, settings } = useApp()
-
-  const forSale = properties.filter((p) => p.status === 'Active' && p.listingType === 'For Sale')
-  const activeSellers = sellers.filter((s) => ['Active', 'Listed', 'Under Offer'].includes(s.status))
+  const { settings } = useApp()
 
   const whatsappLink = getWhatsAppLink(
     settings.whatsappNumber,
@@ -33,9 +29,9 @@ export default function SellersPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/25 text-dark-label rounded-full text-sm font-medium mb-4">
             <Tag className="w-4 h-4" /> For Sellers
           </div>
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-dark-body mb-4">Properties for Sale</h1>
+          <h1 className="font-display text-4xl lg:text-5xl font-bold text-dark-body mb-4">Sell With Confidence</h1>
           <p className="text-dark-muted max-w-2xl mx-auto mb-6">
-            Explore all listings from our registered sellers. View locations on the map and connect directly.
+            Have land, a home, or commercial property to sell? Reach out — we connect you with serious buyers and handle the process with care.
           </p>
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-xl transition-colors">
             <MessageCircle className="w-5 h-5" /> List Your Property
@@ -43,72 +39,44 @@ export default function SellersPage() {
         </div>
       </div>
 
-      {/* Map */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <AnimateOnScroll>
-          <h2 className="font-display text-2xl font-bold text-navy-900 mb-2">Seller Locations on Map</h2>
-          <p className="text-slate-500 text-sm mb-6">Click a property to view its location on Google Maps</p>
-          <SellersMap properties={forSale} sellers={activeSellers} />
-        </AnimateOnScroll>
-      </div>
-
-      {/* Seller listings grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <AnimateOnScroll>
-          <h2 className="font-display text-2xl font-bold text-navy-900 mb-6">All Selling Listings</h2>
-        </AnimateOnScroll>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {forSale.map((p, i) => (
-            <AnimateOnScroll key={p.id} delay={i * 80}>
-              <Link to={`/property/${p.slug}`} className="flex bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover group">
-                <div className="w-40 sm:w-48 shrink-0">
-                  <SafeImage src={p.images[0]} alt={p.title} className="w-full h-full object-cover min-h-[140px] group-hover:scale-105 transition-transform duration-500" fallback={imageFallback} />
-                </div>
-                <div className="p-5 flex-1">
-                  <div className="flex gap-2 mb-2">
-                    <span className="text-[10px] px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full font-medium">{p.propertyType}</span>
-                    <span className="text-[10px] px-2 py-0.5 bg-[#ecfdf5] text-[#075E54] rounded-full font-medium">For Sale</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <AnimateOnScroll direction="left">
+            <h2 className="font-display text-3xl font-bold text-slate-900 mb-6">Why Sell Through Us?</h2>
+            <ul className="space-y-4">
+              {sellPoints.map((point) => (
+                <li key={point} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-[#ecfdf5] flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-[#128C7E]" />
                   </div>
-                  <h3 className="font-semibold text-slate-900 line-clamp-2 group-hover:text-[#128C7E] transition-colors">{p.title}</h3>
-                  <p className="text-[#128C7E] font-bold mt-1">{formatPrice(p.price, p.currency)}</p>
-                  <p className="text-xs text-light-muted flex items-center gap-1 mt-2">
-                    <MapPin className="w-3 h-3" /> {p.city}, {p.state}
-                  </p>
-                  <p className="text-xs text-light-muted mt-1">Agent: {p.agentName}</p>
-                </div>
-              </Link>
-            </AnimateOnScroll>
-          ))}
-        </div>
-
-        {activeSellers.length > 0 && (
-          <div className="mt-12">
-            <h2 className="font-display text-2xl font-bold text-navy-900 mb-6">Registered Seller Properties</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {activeSellers.map((s) => (
-                <div key={s.id} className="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <SafeImage src={s.images[0]} alt={s.propertyTitle} className="w-full h-full object-cover" fallback={imageFallback} />
-                  </div>
-                  <div className="p-5">
-                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
-                      s.status === 'Listed' ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'
-                    }`}>{s.status}</span>
-                    <h3 className="font-semibold text-navy-900 mt-2 line-clamp-1">{s.propertyTitle}</h3>
-                    <p className="text-sm text-light-body">Seller: {s.name}</p>
-                    <p className="text-[#128C7E] font-bold mt-1">{formatPrice(s.askingPrice)}</p>
-                    <p className="text-xs text-light-muted flex items-center gap-1 mt-2">
-                      <MapPin className="w-3 h-3" /> {s.propertyAddress}, {s.city}
-                    </p>
-                    <a href={`tel:${s.phone}`} className="inline-flex items-center gap-1 text-xs text-navy-900 font-medium mt-3">
-                      <Phone className="w-3 h-3" /> {s.phone}
-                    </a>
-                  </div>
-                </div>
+                  <span className="text-light-body">{point}</span>
+                </li>
               ))}
+            </ul>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll direction="right">
+            <div className="bg-white rounded-2xl border border-slate-100 p-8">
+              <h3 className="font-display text-xl font-semibold text-slate-900 mb-4">Get Started Today</h3>
+              <p className="text-light-muted text-sm mb-6">
+                Call or WhatsApp us with your property details — location, type, and expected price. We will take it from there.
+              </p>
+              <div className="space-y-3">
+                <a href={`tel:${settings.phone}`} className="flex items-center gap-3 p-4 rounded-xl bg-[#ecfdf5] hover:bg-[#d1fae5] transition-colors">
+                  <Phone className="w-5 h-5 text-[#128C7E]" />
+                  <span className="font-semibold text-slate-900">{settings.phone}</span>
+                </a>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white transition-colors">
+                  <MessageCircle className="w-5 h-5" />
+                  <span className="font-semibold">WhatsApp Us</span>
+                </a>
+                <Link to="/contact" className="flex items-center justify-center gap-2 p-4 rounded-xl border border-slate-200 hover:border-[#128C7E] text-[#128C7E] font-medium transition-colors">
+                  Send a Message <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
-          </div>
-        )}
+          </AnimateOnScroll>
+        </div>
       </div>
     </div>
   )

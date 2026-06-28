@@ -46,20 +46,17 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-slate-700">
               <li><Link to="/buyers" className="hover:text-[#075E54] transition-colors">For Buyers</Link></li>
               <li><Link to="/sellers" className="hover:text-[#075E54] transition-colors">For Sellers</Link></li>
-              <li><Link to="/listings" className="hover:text-[#075E54] transition-colors">All Properties</Link></li>
-              <li><Link to="/agents" className="hover:text-[#075E54] transition-colors">Agent Profiles</Link></li>
               <li><Link to="/about" className="hover:text-[#075E54] transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-[#075E54] transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-slate-900 font-semibold mb-4">Property Types</h4>
+            <h4 className="text-slate-900 font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm text-slate-700">
-              <li><Link to="/listings?propertyType=Apartment" className="hover:text-[#075E54] transition-colors">Apartments</Link></li>
-              <li><Link to="/listings?propertyType=Villa" className="hover:text-[#075E54] transition-colors">Villas</Link></li>
-              <li><Link to="/listings?propertyType=Commercial" className="hover:text-[#075E54] transition-colors">Commercial</Link></li>
-              <li><Link to="/listings?propertyType=Land" className="hover:text-[#075E54] transition-colors">Land</Link></li>
-              <li><Link to="/listings?propertyType=Building" className="hover:text-[#075E54] transition-colors">Buildings</Link></li>
+              {settings.serviceCategories.map((cat) => (
+                <li key={cat.title}>{cat.title}</li>
+              ))}
             </ul>
           </div>
 

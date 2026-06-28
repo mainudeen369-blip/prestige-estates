@@ -1,20 +1,15 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Shield, Headphones, BadgeCheck, Search, FileCheck, Handshake, Key, Sparkles, Phone } from 'lucide-react'
 import { useApp } from '../context/AppContext'
-import HeroSearch from '../components/HeroSearch'
 import HeroBackground from '../components/HeroBackground'
-import PropertyCard from '../components/PropertyCard'
 import StatsBar from '../components/StatsBar'
-import PropertyMarquee from '../components/PropertyMarquee'
 import CompanyAboutSection from '../components/CompanyAboutSection'
 import AnimateOnScroll from '../components/AnimateOnScroll'
 import SafeImage from '../components/SafeImage'
-import { filterProperties, getWhatsAppLink } from '../utils/helpers'
+import { getWhatsAppLink } from '../utils/helpers'
 
 export default function HomePage() {
-  const { properties, settings } = useApp()
-  const featured = filterProperties(properties, { featuredOnly: true, activeOnly: true }).slice(0, 3)
-  const recent = filterProperties(properties, { activeOnly: true }).slice(0, 6)
+  const { settings } = useApp()
 
   const services = settings.trustPoints?.length
     ? settings.trustPoints.map((tp, i) => ({
@@ -29,7 +24,7 @@ export default function HomePage() {
       ]
 
   const process = [
-    { icon: Search, step: '01', title: 'Explore', desc: 'Browse plots, farmland, homes & commercial spaces across AP & Telangana.' },
+    { icon: Search, step: '01', title: 'Explore', desc: 'Tell us what you need — plots, farmland, homes, or commercial spaces across AP & Telangana.' },
     { icon: FileCheck, step: '02', title: 'Verify', desc: 'We check every document — clear title, legal clarity, site visit arranged.' },
     { icon: Handshake, step: '03', title: 'Deal', desc: 'Fair negotiation between buyer and seller. Transparent pricing always.' },
     { icon: Key, step: '04', title: 'Own It', desc: 'Registration, handover & after-sale support. Your dream, fulfilled.' },
@@ -41,16 +36,13 @@ export default function HomePage() {
     { name: 'Venkatesh Rao', role: 'Investor, Warangal', text: 'Best realtor for vacant plots in developing areas. Affordable prices and lifetime trust — exactly as they promise.', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=90' },
   ]
 
-  const whatsappLink = getWhatsAppLink(settings.whatsappNumber, `Hi ${settings.companyName}! I want to know about your properties.`)
+  const whatsappLink = getWhatsAppLink(settings.whatsappNumber, `Hi ${settings.companyName}! I want to know about your services.`)
 
   return (
     <>
-      {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden w-full">
         <div className="absolute inset-0 overflow-hidden">
-          <HeroBackground
-            imageSrc={settings.heroImage}
-          />
+          <HeroBackground imageSrc={settings.heroImage} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full min-w-0">
@@ -65,7 +57,7 @@ export default function HomePage() {
             )}
             <h1 className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 animate-fade-up break-words hero-text-shadow">
               {settings.heroTitle.split(' ').slice(0, -2).join(' ')}{' '}
-              <span className="hero-accent">{settings.heroTitle.split(' ').slice(-2).join(' ')}</span>
+              <span>{settings.heroTitle.split(' ').slice(-2).join(' ')}</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
               {settings.heroSubtitle}
@@ -87,25 +79,20 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <AnimateOnScroll direction="up" delay={300}>
-            <HeroSearch />
-          </AnimateOnScroll>
           <div className="mt-8 flex flex-wrap gap-3 sm:gap-4 animate-fade-up">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/30 max-w-full text-center">
               <Phone className="w-4 h-4 shrink-0" /> Call / WhatsApp: {settings.phone}
             </a>
-            <Link to="/buyers" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#1a5f72]/90 hover:bg-[#1a5f72] border border-white/20 text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 shadow-lg">
-              Browse Properties <ArrowRight className="w-4 h-4" />
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-[#1a5f72]/90 hover:bg-[#1a5f72] border border-white/20 text-white text-sm sm:text-base font-semibold rounded-xl transition-all hover:scale-105 shadow-lg">
+              Contact Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      <PropertyMarquee />
       <StatsBar />
       <CompanyAboutSection />
 
-      {/* Starting prices banner */}
       <section className="py-12 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#e8f3ee]/50 via-[#eef0f6]/40 to-[#f3ebf0]/45 animate-gradient" />
         <div className="max-w-7xl mx-auto px-4 relative">
@@ -124,39 +111,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured */}
-      <section className="py-24 bg-section-light overflow-x-clip">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
-          <AnimateOnScroll>
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
-              <div>
-                <p className="text-light-label text-sm font-semibold tracking-widest uppercase mb-2">Handpicked For You</p>
-                <h2 className="font-display text-3xl lg:text-5xl font-bold text-slate-900">Featured Properties</h2>
-                <p className="text-light-muted mt-2 max-w-lg">Premium plots, homes & commercial spaces — verified and ready.</p>
-              </div>
-              <Link to="/listings" className="hidden sm:flex items-center gap-2 text-[#128C7E] font-medium hover:gap-3 transition-all group shine-hover px-4 py-2 rounded-lg">
-                View All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </AnimateOnScroll>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 min-w-0">
-            {featured[0] && (
-              <AnimateOnScroll direction="left">
-                <PropertyCard property={featured[0]} variant="featured" />
-              </AnimateOnScroll>
-            )}
-            <div className="grid gap-8">
-              {featured.slice(1).map((p, i) => (
-                <AnimateOnScroll key={p.id} delay={i * 150} direction="right">
-                  <PropertyCard property={p} />
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
       <section className="py-24 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#6b5b7a]/12 rounded-full blur-3xl animate-float" />
@@ -188,7 +142,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why choose us */}
       <section className="py-24 bg-section-cream relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -217,7 +170,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Highlights strip */}
       <section className="py-16 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-30 animate-gradient bg-gradient-to-r from-[#075E54] via-[#2a7088] to-[#5a5588]" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -234,33 +186,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Recent Listings */}
-      <section className="py-24 bg-section-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimateOnScroll>
-            <div className="text-center mb-16">
-              <p className="text-light-label text-sm font-semibold tracking-widest uppercase mb-2">Fresh Listings</p>
-              <h2 className="font-display text-3xl lg:text-5xl font-bold text-slate-900">Latest Properties</h2>
-            </div>
-          </AnimateOnScroll>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {recent.map((p, i) => (
-              <AnimateOnScroll key={p.id} delay={i * 80} direction="scale">
-                <PropertyCard property={p} />
-              </AnimateOnScroll>
-            ))}
-          </div>
-          <AnimateOnScroll>
-            <div className="text-center mt-14">
-              <Link to="/listings" className="inline-flex items-center gap-2 px-10 py-4 bg-[#075E54] hover:bg-[#128C7E] text-white font-semibold rounded-xl transition-all hover:shadow-xl hover:scale-105 group shine-hover">
-                Explore All Properties <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
-
-      {/* Testimonials */}
       <section className="py-24 bg-section-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
@@ -298,7 +223,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <HeroBackground imageSrc={settings.heroImage} />
