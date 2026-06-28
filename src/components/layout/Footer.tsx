@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-footer text-slate-800 border-t border-[#8aa8a0]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           <div>
             <Logo variant="dark" showText={true} className="mb-4" />
             <p className="text-sm leading-relaxed mb-2 text-slate-700">{settings.tagline}</p>
@@ -48,15 +48,6 @@ export default function Footer() {
               <li><Link to="/sellers" className="hover:text-[#075E54] transition-colors">For Sellers</Link></li>
               <li><Link to="/about" className="hover:text-[#075E54] transition-colors">About Us</Link></li>
               <li><Link to="/contact" className="hover:text-[#075E54] transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-slate-900 font-semibold mb-4">Our Services</h4>
-            <ul className="space-y-2 text-sm text-slate-700">
-              {settings.serviceCategories.map((cat) => (
-                <li key={cat.title}>{cat.title}</li>
-              ))}
             </ul>
           </div>
 

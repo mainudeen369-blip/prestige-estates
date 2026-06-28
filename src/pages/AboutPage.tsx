@@ -1,5 +1,5 @@
 import { useApp } from '../context/AppContext'
-import { Target, Eye, Quote, Check, Sparkles, Phone, Mail } from 'lucide-react'
+import { Target, Eye, Quote, Check, Phone, Mail, Sparkles } from 'lucide-react'
 import AnimateOnScroll from '../components/AnimateOnScroll'
 import HeroBackground from '../components/HeroBackground'
 import SafeImage from '../components/SafeImage'
@@ -219,6 +219,7 @@ export default function AboutPage() {
             </div>
           </div>
         </AnimateOnScroll>
+
       </div>
     </div>
   )

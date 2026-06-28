@@ -24,7 +24,7 @@ export default function HomePage() {
       ]
 
   const process = [
-    { icon: Search, step: '01', title: 'Explore', desc: 'Tell us what you need — plots, farmland, homes, or commercial spaces across AP & Telangana.' },
+    { icon: Search, step: '01', title: 'Explore', desc: 'Browse plots, farmland, homes & commercial spaces across AP & Telangana.' },
     { icon: FileCheck, step: '02', title: 'Verify', desc: 'We check every document — clear title, legal clarity, site visit arranged.' },
     { icon: Handshake, step: '03', title: 'Deal', desc: 'Fair negotiation between buyer and seller. Transparent pricing always.' },
     { icon: Key, step: '04', title: 'Own It', desc: 'Registration, handover & after-sale support. Your dream, fulfilled.' },
@@ -36,13 +36,16 @@ export default function HomePage() {
     { name: 'Venkatesh Rao', role: 'Investor, Warangal', text: 'Best realtor for vacant plots in developing areas. Affordable prices and lifetime trust — exactly as they promise.', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=90' },
   ]
 
-  const whatsappLink = getWhatsAppLink(settings.whatsappNumber, `Hi ${settings.companyName}! I want to know about your services.`)
+  const whatsappLink = getWhatsAppLink(settings.whatsappNumber, `Hi ${settings.companyName}! I want to know about your properties.`)
 
   return (
     <>
+      {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden w-full">
         <div className="absolute inset-0 overflow-hidden">
-          <HeroBackground imageSrc={settings.heroImage} />
+          <HeroBackground
+            imageSrc={settings.heroImage}
+          />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full min-w-0">
@@ -57,7 +60,7 @@ export default function HomePage() {
             )}
             <h1 className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.08] mb-6 animate-fade-up break-words hero-text-shadow">
               {settings.heroTitle.split(' ').slice(0, -2).join(' ')}{' '}
-              <span>{settings.heroTitle.split(' ').slice(-2).join(' ')}</span>
+              <span className="hero-accent">{settings.heroTitle.split(' ').slice(-2).join(' ')}</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
               {settings.heroSubtitle}
@@ -93,6 +96,7 @@ export default function HomePage() {
       <StatsBar />
       <CompanyAboutSection />
 
+      {/* Starting prices banner */}
       <section className="py-12 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#e8f3ee]/50 via-[#eef0f6]/40 to-[#f3ebf0]/45 animate-gradient" />
         <div className="max-w-7xl mx-auto px-4 relative">
@@ -111,6 +115,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Process */}
       <section className="py-24 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#6b5b7a]/12 rounded-full blur-3xl animate-float" />
@@ -142,6 +147,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why choose us */}
       <section className="py-24 bg-section-cream relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -170,6 +176,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Highlights strip */}
       <section className="py-16 bg-brand-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-30 animate-gradient bg-gradient-to-r from-[#075E54] via-[#2a7088] to-[#5a5588]" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -186,6 +193,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials */}
       <section className="py-24 bg-section-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll>
@@ -223,6 +231,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <HeroBackground imageSrc={settings.heroImage} />
